@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainLayout from "./Layout";
 import Home from "./Pages/Home";
-import Speciality from "./Pages/specialities/speciality";
+import Clinical_Oncology from "./Pages/specialities/Clinical_Oncology";
 
 function App() {
   return (
@@ -9,7 +9,10 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
-          <Route path="/specialities/:id" element={<Speciality />} />
+          {/* <Route
+            path="/specialities/clinical-oncology"
+            element={<Clinical_Oncology />}
+          /> */}
         </Route>
       </Routes>
     </BrowserRouter>

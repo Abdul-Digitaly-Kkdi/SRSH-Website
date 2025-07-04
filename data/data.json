@@ -2,11 +2,11 @@
   "departments": [
     {
       "id": "medical-gastroenterology",
-      "title": "Medical Gastroenterology",
-      "image": "https://sriramakrishnahospitaltrichy.com/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-02-at-14.28.55_6094b5fc-768x513.jpg",
-      "description": "The Department of Medical Gastroenterology and Hepatology at Sri Ramakrishna Specialty Hospital is dedicated to the diagnosis and treatment of a wide range of digestive and liver disorders. Our expert team offers compassionate, comprehensive care using advanced technologies and personalized treatment plans. We manage conditions such as gastrointestinal diseases, liver disorders, inflammatory bowel disease (IBD), pancreatic issues, and gastrointestinal cancers. Our specialists are skilled in advanced diagnostic and therapeutic endoscopic procedures, including upper GI endoscopy, colonoscopy, ERCP with stenting, variceal banding, hemoclipping, esophageal stenting, polypectomy, and mucosal resection.",
-      "title02": "Our services include:",
-      "title02_list": [
+      "speciality_maintitle": "Medical Gastroenterology",
+      "speciality_image": "https://sriramakrishnahospitaltrichy.com/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-02-at-14.28.55_6094b5fc-768x513.jpg",
+      "speciality_maindescription": "The Department of Medical Gastroenterology and Hepatology at Sri Ramakrishna Specialty Hospital is dedicated to the diagnosis and treatment of a wide range of digestive and liver disorders. Our expert team offers compassionate, comprehensive care using advanced technologies and personalized treatment plans.\n\nWe manage conditions such as gastrointestinal diseases, liver disorders, inflammatory bowel disease (IBD), pancreatic issues, and gastrointestinal cancers. Our specialists are skilled in advanced diagnostic and therapeutic endoscopic procedures, including upper GI endoscopy, colonoscopy, ERCP with stenting, variceal banding, hemoclipping, esophageal stenting, polypectomy, and mucosal resection.",
+      "speciality_content01_title": "Our services include:",
+      "speciality_content01_list": [
         "Diagnostic & Therapeutic Endoscopy",
         "Liver Disease Management (Hepatitis, Cirrhosis, Fatty Liver)",
         "Inflammatory Bowel Disease (IBD) Treatment",
@@ -16,45 +16,52 @@
         "GI Motility Disorder Management",
         "Evaluation for Liver Transplant"
       ],
-      "title03": "Why Choose Us?",
-      "title03_list": [
+      "speciality_content02_title": "Why Choose Us?",
+      "speciality_content02_list": [
         "Experienced Team: Skilled in managing complex GI and liver conditions",
         "Advanced Technology: State-of-the-art diagnostic and therapeutic tools",
         "Personalized Care: Tailored treatment with holistic patient support"
       ],
-      "conclusion": "Our mission is to provide high-quality, patient-focused care to help you achieve and maintain optimal digestive health."
+      "speciality_conclusion": "Our mission is to provide high-quality, patient-focused care to help you achieve and maintain optimal digestive health."
     },
     {
-      "id": "gastroenterology-duplicate-1",
-      "title": "Medical Gastroenterology",
-      "image": "https://sriramakrishnahospitaltrichy.com/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-02-at-14.28.55_6094b5fc-768x513.jpg",
-      "description": "The Department of Medical Gastroenterology and Hepatology at Sri Ramakrishna Specialty Hospital is dedicated to the diagnosis and treatment of a wide range of digestive and liver disorders. Our expert team offers compassionate, comprehensive care using advanced technologies and personalized treatment plans. We manage conditions such as gastrointestinal diseases, liver disorders, inflammatory bowel disease (IBD), pancreatic issues, and gastrointestinal cancers. Our specialists are skilled in advanced diagnostic and therapeutic endoscopic procedures, including upper GI endoscopy, colonoscopy, ERCP with stenting, variceal banding, hemoclipping, esophageal stenting, polypectomy, and mucosal resection.",
-      "title02": "Our services include:",
-      "title02_list": [
-        "Diagnostic & Therapeutic Endoscopy",
-        "Liver Disease Management (Hepatitis, Cirrhosis, Fatty Liver)",
-        "Inflammatory Bowel Disease (IBD) Treatment",
-        "Pancreatic Disorder Care",
-        "Gastrointestinal Cancer Screening & Treatment",
-        "Nutritional Counseling and Support",
-        "GI Motility Disorder Management",
-        "Evaluation for Liver Transplant"
+      "id": "clinical-oncology",
+      "speciality_maintitle": "Clinical Oncology",
+      "speciality_image": "https://sriramakrishnahospitaltrichy.com/wp-content/uploads/2025/06/diverse-group-of-surgeons-operating-on-patient-in-2025-04-03-05-38-52-utc-683x1024.jpg",
+      "speciality_maindescription": "Clinical Oncology is a specialized branch of medicine dedicated to the diagnosis, treatment, and management of cancer. At our center, we follow a multidisciplinary approach involving medical, surgical, and radiation therapies to provide comprehensive cancer care. Our team is committed to using the latest advancements to deliver personalized treatment tailored to each patient’s needs.",
+      "speciality_content01_title": "Medical Oncology",
+      "speciality_content01_desciption": "Our clinical oncology services include chemotherapy, targeted therapy, immunotherapy, and hormone therapy. Treatment plans are customized based on cancer type, stage, and the patient’s overall health.",
+      "speciality_content01_list": [
+        "Chemotherapy - Medications that destroy or halt the growth of cancer cells",
+        "Targeted Therapy - Drugs that attack specific cancer cell markers",
+        "Immunotherapy - Boosts the immune system to fight cancer",
+        "Hormone Therapy - Blocks or removes hormones that fuel certain cancers"
       ],
-      "title03": "Why Choose Us?",
-      "title03_list": [
-        "Experienced Team: Skilled in managing complex GI and liver conditions",
-        "Advanced Technology: State-of-the-art diagnostic and therapeutic tools",
-        "Personalized Care: Tailored treatment with holistic patient support"
+
+      "speciality_content02_title": "Surgical Oncology",
+      "speciality_content02_desciption": "Our surgical oncology team performs precise tumor removal using advanced techniques that aim to preserve healthy tissues and promote faster recovery.",
+      "speciality_content02_list": [
+        "Tumor Resection - Surgical removal of cancerous growths",
+        "Minimally Invasive Surgery - Laparoscopic procedures for quicker recovery",
+        "Sentinel Node Biopsy - To check cancer spread to lymph nodes"
       ],
-      "conclusion": "Our mission is to provide high-quality, patient-focused care to help you achieve and maintain optimal digestive health."
+
+      "speciality_content03_title": "Why Choose Us?",
+      "speciality_content03_list": [
+        "Expert Team - Experienced oncologists skilled in modern cancer therapies",
+        "Personalized Care - Individualized treatment for better outcomes",
+        "Advanced Technology - Latest tools for accurate diagnosis and treatment"
+      ],
+      "speciality_conclusion": "Complete Support from diagnosis to recovery, with counseling, nutrition, and education services"
     },
     {
-      "id": "gastroenterology-duplicate-2",
-      "title": "Medical Gastroenterology",
-      "image": "https://sriramakrishnahospitaltrichy.com/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-02-at-14.28.55_6094b5fc-768x513.jpg",
-      "description": "The Department of Medical Gastroenterology and Hepatology at Sri Ramakrishna Specialty Hospital is dedicated to the diagnosis and treatment of a wide range of digestive and liver disorders. Our expert team offers compassionate, comprehensive care using advanced technologies and personalized treatment plans. We manage conditions such as gastrointestinal diseases, liver disorders, inflammatory bowel disease (IBD), pancreatic issues, and gastrointestinal cancers. Our specialists are skilled in advanced diagnostic and therapeutic endoscopic procedures, including upper GI endoscopy, colonoscopy, ERCP with stenting, variceal banding, hemoclipping, esophageal stenting, polypectomy, and mucosal resection.",
-      "title02": "Our services include:",
-      "title02_list": [
+      "id": "medical-gastroenterology",
+      "speciality_maintitle": "Medical Gastroenterology",
+      "speciality_image": "https://sriramakrishnahospitaltrichy.com/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-02-at-14.28.55_6094b5fc-768x513.jpg",
+      "speciality_maindescription": "The Department of Medical Gastroenterology and Hepatology at Sri Ramakrishna Specialty Hospital is dedicated to the diagnosis and treatment of a wide range of digestive and liver disorders. Our expert team offers compassionate, comprehensive care using advanced technologies and personalized treatment plans. We manage conditions such as gastrointestinal diseases, liver disorders, inflammatory bowel disease (IBD), pancreatic issues, and gastrointestinal cancers. Our specialists are skilled in advanced diagnostic and therapeutic endoscopic procedures, including upper GI endoscopy, colonoscopy, ERCP with stenting, variceal banding, hemoclipping, esophageal stenting, polypectomy, and mucosal resection.",
+      "speciality_content01_title": "Our services include:",
+      "speciality_content01_desciption": "Our services description",
+      "speciality_content01_list": [
         "Diagnostic & Therapeutic Endoscopy",
         "Liver Disease Management (Hepatitis, Cirrhosis, Fatty Liver)",
         "Inflammatory Bowel Disease (IBD) Treatment",
@@ -64,13 +71,14 @@
         "GI Motility Disorder Management",
         "Evaluation for Liver Transplant"
       ],
-      "title03": "Why Choose Us?",
-      "title03_list": [
+      "speciality_content02_title": "Why Choose Us?",
+      "speciality_content02_desciption": "Our services description",
+      "speciality_content02_list": [
         "Experienced Team: Skilled in managing complex GI and liver conditions",
         "Advanced Technology: State-of-the-art diagnostic and therapeutic tools",
         "Personalized Care: Tailored treatment with holistic patient support"
       ],
-      "conclusion": "Our mission is to provide high-quality, patient-focused care to help you achieve and maintain optimal digestive health."
+      "speciality_conclusion": "Our mission is to provide high-quality, patient-focused care to help you achieve and maintain optimal digestive health."
     }
   ]
 }
