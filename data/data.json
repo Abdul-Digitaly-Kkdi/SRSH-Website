@@ -1,0 +1,76 @@
+{
+  "departments": [
+    {
+      "id": "medical-gastroenterology",
+      "title": "Medical Gastroenterology",
+      "image": "https://sriramakrishnahospitaltrichy.com/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-02-at-14.28.55_6094b5fc-768x513.jpg",
+      "description": "The Department of Medical Gastroenterology and Hepatology at Sri Ramakrishna Specialty Hospital is dedicated to the diagnosis and treatment of a wide range of digestive and liver disorders. Our expert team offers compassionate, comprehensive care using advanced technologies and personalized treatment plans. We manage conditions such as gastrointestinal diseases, liver disorders, inflammatory bowel disease (IBD), pancreatic issues, and gastrointestinal cancers. Our specialists are skilled in advanced diagnostic and therapeutic endoscopic procedures, including upper GI endoscopy, colonoscopy, ERCP with stenting, variceal banding, hemoclipping, esophageal stenting, polypectomy, and mucosal resection.",
+      "title02": "Our services include:",
+      "title02_list": [
+        "Diagnostic & Therapeutic Endoscopy",
+        "Liver Disease Management (Hepatitis, Cirrhosis, Fatty Liver)",
+        "Inflammatory Bowel Disease (IBD) Treatment",
+        "Pancreatic Disorder Care",
+        "Gastrointestinal Cancer Screening & Treatment",
+        "Nutritional Counseling and Support",
+        "GI Motility Disorder Management",
+        "Evaluation for Liver Transplant"
+      ],
+      "title03": "Why Choose Us?",
+      "title03_list": [
+        "Experienced Team: Skilled in managing complex GI and liver conditions",
+        "Advanced Technology: State-of-the-art diagnostic and therapeutic tools",
+        "Personalized Care: Tailored treatment with holistic patient support"
+      ],
+      "conclusion": "Our mission is to provide high-quality, patient-focused care to help you achieve and maintain optimal digestive health."
+    },
+    {
+      "id": "gastroenterology-duplicate-1",
+      "title": "Medical Gastroenterology",
+      "image": "https://sriramakrishnahospitaltrichy.com/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-02-at-14.28.55_6094b5fc-768x513.jpg",
+      "description": "The Department of Medical Gastroenterology and Hepatology at Sri Ramakrishna Specialty Hospital is dedicated to the diagnosis and treatment of a wide range of digestive and liver disorders. Our expert team offers compassionate, comprehensive care using advanced technologies and personalized treatment plans. We manage conditions such as gastrointestinal diseases, liver disorders, inflammatory bowel disease (IBD), pancreatic issues, and gastrointestinal cancers. Our specialists are skilled in advanced diagnostic and therapeutic endoscopic procedures, including upper GI endoscopy, colonoscopy, ERCP with stenting, variceal banding, hemoclipping, esophageal stenting, polypectomy, and mucosal resection.",
+      "title02": "Our services include:",
+      "title02_list": [
+        "Diagnostic & Therapeutic Endoscopy",
+        "Liver Disease Management (Hepatitis, Cirrhosis, Fatty Liver)",
+        "Inflammatory Bowel Disease (IBD) Treatment",
+        "Pancreatic Disorder Care",
+        "Gastrointestinal Cancer Screening & Treatment",
+        "Nutritional Counseling and Support",
+        "GI Motility Disorder Management",
+        "Evaluation for Liver Transplant"
+      ],
+      "title03": "Why Choose Us?",
+      "title03_list": [
+        "Experienced Team: Skilled in managing complex GI and liver conditions",
+        "Advanced Technology: State-of-the-art diagnostic and therapeutic tools",
+        "Personalized Care: Tailored treatment with holistic patient support"
+      ],
+      "conclusion": "Our mission is to provide high-quality, patient-focused care to help you achieve and maintain optimal digestive health."
+    },
+    {
+      "id": "gastroenterology-duplicate-2",
+      "title": "Medical Gastroenterology",
+      "image": "https://sriramakrishnahospitaltrichy.com/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-02-at-14.28.55_6094b5fc-768x513.jpg",
+      "description": "The Department of Medical Gastroenterology and Hepatology at Sri Ramakrishna Specialty Hospital is dedicated to the diagnosis and treatment of a wide range of digestive and liver disorders. Our expert team offers compassionate, comprehensive care using advanced technologies and personalized treatment plans. We manage conditions such as gastrointestinal diseases, liver disorders, inflammatory bowel disease (IBD), pancreatic issues, and gastrointestinal cancers. Our specialists are skilled in advanced diagnostic and therapeutic endoscopic procedures, including upper GI endoscopy, colonoscopy, ERCP with stenting, variceal banding, hemoclipping, esophageal stenting, polypectomy, and mucosal resection.",
+      "title02": "Our services include:",
+      "title02_list": [
+        "Diagnostic & Therapeutic Endoscopy",
+        "Liver Disease Management (Hepatitis, Cirrhosis, Fatty Liver)",
+        "Inflammatory Bowel Disease (IBD) Treatment",
+        "Pancreatic Disorder Care",
+        "Gastrointestinal Cancer Screening & Treatment",
+        "Nutritional Counseling and Support",
+        "GI Motility Disorder Management",
+        "Evaluation for Liver Transplant"
+      ],
+      "title03": "Why Choose Us?",
+      "title03_list": [
+        "Experienced Team: Skilled in managing complex GI and liver conditions",
+        "Advanced Technology: State-of-the-art diagnostic and therapeutic tools",
+        "Personalized Care: Tailored treatment with holistic patient support"
+      ],
+      "conclusion": "Our mission is to provide high-quality, patient-focused care to help you achieve and maintain optimal digestive health."
+    }
+  ]
+}
