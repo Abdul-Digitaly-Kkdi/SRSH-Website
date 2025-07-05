@@ -49,8 +49,8 @@ const images = [
 const Insurance = () => {
     return (
         <>
-            <h1 className='text-center text-3xl md:text-4xl font-semibold text-red-700 py-5 md:hidden'>Our Insurance</h1>
-            <div className="w-full bg-rose-100 py-4 relative">
+            <h1 className='text-center text-3xl md:text-4xl font-semibold text-red-700 py-5 md:hidden '>Our Insurance</h1>
+            <div className="w-full bg-rose-100 py-4 relative mb-5">
 
                 <div className='hidden md:flex absolute top-0 left-0 z-10  items-center font-semibold px-2 text-3xl bg-rose-400  h-28 text-white'>
                     Our Insurance
