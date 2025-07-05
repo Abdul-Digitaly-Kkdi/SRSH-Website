@@ -11,6 +11,7 @@ import Blogs from "./Pages/Blogs";
 import BlogDetail from "./Pages/Blogs/BlogDetails";
 import Gallery from "./Pages/Gallery";
 import { useEffect } from "react";
+import NotFound from "./Pages/404/Index";
 
 
 
@@ -45,6 +46,7 @@ function App() {
           <Route path="/doctors" element={<Doctors />} />
           <Route path="/specialities/:id" element={<Speciality />} />
           <Route path="/csr" element={<DeltaCancerFoundation />} />
+          <Route path="/*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -36,7 +36,7 @@ const Ourdoctors = () => {
                     Our Doctors
                 </h1>
 
-                <div className="md:w-10/12 flex flex-wrap gap-6 justify-center">
+                <div className="w-full flex flex-wrap gap-6 justify-center">
                     {doctors &&
                         doctors.map((d) => (
                             <div
