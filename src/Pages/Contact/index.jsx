@@ -3,6 +3,8 @@ import React from "react";
 import Touch from "./Touch";
 import Appoinment from "./Appoinment";
 import ContactUs from "./ContactUs";
+import Accordion from "./Accordion";
+import Location from "./Location";
 
 function index() {
   return (
@@ -10,6 +12,10 @@ function index() {
     <Touch />
     <ContactUs />
     <Appoinment />
+    <Accordion />
+    <Location />
+    
+
 
 
 

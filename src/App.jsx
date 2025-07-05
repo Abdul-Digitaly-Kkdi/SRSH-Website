@@ -2,7 +2,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainLayout from "./Layout";
 import Home from "./Pages/Home";
 import Speciality from "./Pages/specialities/speciality";
-import Contact from "./Pages/Contact/index"
+import DeltaCancerFoundation from "./Pages/CSR";
+import Contact from "./Pages/Contact";
 
 function App() {
   return (
