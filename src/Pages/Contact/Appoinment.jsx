@@ -75,7 +75,7 @@ function Appoinment() {
 
           {/* Overlapping Form */}
           <div className="w-full lg:w-6/12 shadow-lg px-5 mx-auto bg-white -mt-28 z-10 relative rounded-lg">
-            <h2 className="text-2xl font-semibold mb-6 text-cyan-800 py-3">
+            <h2 className="text-2xl md:text-4xl text-rose-700 font-semibold mb-6 py-3">
               Book Your Appointment
             </h2>
             <form onSubmit={handleSubmit} noValidate className="space-y-4">
@@ -190,7 +190,7 @@ function Appoinment() {
               <div className="py-5">
                 <button
                   type="submit"
-                  className="flex items-center justify-center gap-2 bg-gradient-to-r from-red-500 to-pink-500 text-white px-8 py-3 rounded-full mt-2 cursor-pointer"
+                  className="flex items-center justify-center gap-2 bg-gradient-to-r from-red-500 to-pink-500 text-white hover:from-pink-500 hover:to-red-500 hover:text-black px-8 py-3 rounded-full mt-2 cursor-pointer"
                 >
                   Book an Appointment <FiArrowUpRight />
                 </button>
