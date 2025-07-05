@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainLayout from "./Layout";
 import Home from "./Pages/Home";
 import Clinical_Oncology from "./Pages/specialities/Clinical_Oncology";
+import Doctors from "./Pages/doctors";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
             path="/specialities/clinical-oncology"
             element={<Clinical_Oncology />}
           /> */}
+          <Route path="/doctors" element={<Doctors />} />
         </Route>
       </Routes>
     </BrowserRouter>
