@@ -27,7 +27,7 @@ const HospitalDetails = () => {
                         We are honoured to be your partner on your journey to wellness, and we are committed to supporting you every step of the way.
                     </p>
                     <button
-                        className='bg-rose-500 px-3 py-2 text-white rounded mt-5 md:mt-10 cursor-pointer'
+                        className='bg-rose-500 px-3 py-2 text-white rounded mt-5 md:mt-10 cursor-pointer hover:scale-105'
                     >About Us</button>
                 </div>
             </div>
