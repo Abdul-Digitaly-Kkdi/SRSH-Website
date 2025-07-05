@@ -5,7 +5,9 @@ import HospitalDetails from './Components/HospitalDetails'
 import SurgeryStats from './Components/Counter'
 import SpecialitiesGrid from './Components/SpecialitiesGrid'
 import Review from './Components/Reviews'
-import OurDocter from './Components/OurDocter'
+import OurDoctor from './Components/OurDocter'
+import Insurance from './Components/Insurance'
+import TestimonialPage from './Components/Testimoniel'
 
 const Home = () => {
     return (
@@ -16,7 +18,10 @@ const Home = () => {
             <SurgeryStats />
             <SpecialitiesGrid />
             <Review />
-            <OurDocter />
+            <TestimonialPage />
+            <OurDoctor />
+            <Insurance />
+
         </div>
     )
 }
