@@ -72,7 +72,7 @@ function ContactUs() {
         <div className="flex flex-col lg:flex-row px-4 py-10 gap-10">
           {/* Left Side - Contact Form */}
           <div className="w-full lg:w-6/12 rounded-md  px-5 py-3" style={{ boxShadow: '0 0 10px rgba(0,0,0,0.15)' }}>
-            <h2 className="text-2xl font-semibold mb-6 text-cyan-800">
+            <h2 className="text-2xl md:text-4xl font-semibold mb-6 text-rose-700">
               Contact with us
             </h2>
             <form onSubmit={handleSubmit} noValidate className="space-y-4">
@@ -165,7 +165,7 @@ function ContactUs() {
               <div className="py-5">
                 <button
                   type="submit"
-                  className="flex items-center justify-center gap-2 bg-gradient-to-r from-red-500 to-pink-500 text-white px-8 py-3 rounded-full mt-2 cursor-pointer"
+                  className="flex items-center justify-center gap-2 bg-gradient-to-r from-red-500 to-pink-500 text-white hover:from-pink-500 hover:to-red-500 hover:text-black px-8 py-3 rounded-full mt-2 cursor-pointer"
                 >
                   Submit <FiArrowUpRight />
                 </button>
@@ -173,17 +173,17 @@ function ContactUs() {
             </form>
           </div>
 
-          <div className="w-full lg:w-6/12 shadow-lg rounded-md px-2 flex flex-col justify-start items-start py-3" style={{ boxShadow: '0 0 10px rgba(0,0,0,0.15)' }}>
-            <p className="text-2xl font-semibold mb-6 text-cyan-800 text-left">
+          <div className="w-full lg:w-6/12 shadow-lg rounded-md px-4 flex flex-col justify-start items-start py-3" style={{ boxShadow: '0 0 10px rgba(0,0,0,0.15)' }}>
+            <p className="text-2xl md:text-4xl text-rose-700 font-semibold mb-6 text-left px-1">
               Contact Information
             </p>
 
-            <div className="lg:w-full grid grid-cols-1 sm:grid-cols-2 px-5 md:px-2 gap-8 md:gap-7 py-10">
+            <div className="lg:w-full grid grid-cols-1 sm:grid-cols-2 px-5 md:px-2 gap-8 md:gap-7 py-3 md:py-10">
               {/* Email */}
               <div className="flex gap-4 items-start">
-                <div className="bg-[#FFE4E6] p-2 rounded">
+                <div className="bg-[#FBB8CF] p-2 rounded">
                   {/* Replace with icon */}
-                  <MdOutlineMail size={30} className="text-pink-400" />
+                  <MdOutlineMail size={30} className="text-[#BE3263]" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-cyan-800 text-lg">Email</h4>
@@ -195,8 +195,8 @@ function ContactUs() {
 
               {/* Contact No */}
               <div className="flex gap-4 items-start">
-                <div className="bg-[#FFE4E6] p-2 rounded">
-                  <MdOutlineCall size={30} className="text-pink-400" />
+                <div className="bg-[#FBB8CF] p-2 rounded">
+                  <MdOutlineCall size={30} className="text-[#BE3263]" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-cyan-800 text-lg">
@@ -208,8 +208,8 @@ function ContactUs() {
 
               {/* Address */}
               <div className="flex gap-4 items-start">
-                <div className="bg-[#FFE4E6] p-2 rounded">
-                  <MdOutlineLocationOn size={30} className="text-pink-400" />
+                <div className="bg-[#FBB8CF] p-2 rounded">
+                  <MdOutlineLocationOn size={30} className="text-[#BE3263]" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-cyan-800 text-lg">
@@ -224,8 +224,8 @@ function ContactUs() {
 
               {/* International Patients */}
               <div className="flex gap-4 items-start">
-                <div className="bg-[#FFE4E6] p-2 rounded">
-                  <MdOutlineCall size={30} className="text-pink-400" />
+                <div className="bg-[#FBB8CF] p-2 rounded">
+                  <MdOutlineCall size={30} className="text-[#BE3263]" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-cyan-800 text-lg">
@@ -238,19 +238,34 @@ function ContactUs() {
 
 <div className="w-full flex flex-col items-center text-center">
   
-  <p className="text-xl font-semibold text-cyan-800 mb-4">
+  <p className="text-xl font-semibold text-cyan-800 py-3 md:py-0 mb-4">
     Follow us
   </p>
   
-  <div className="flex justify-center items-center gap-5">
-    <div className="p-3 bg-pink-200 rounded-xl">
-      <FaFacebookF size={20} className="text-pink-500" />
+  <div className="flex justify-center items-center gap-5 mb-3">
+    <div className="p-3 bg-[#FBB8CF] rounded-xl cursor-pointer">
+      <a
+    href="https://www.facebook.com/people/Dr-Vijay-Anand/61554146246375/?rdid=wXmFs0MOABN6gyUX&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BvvyyFdde%2F"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+      <FaFacebookF size={20} className="text-[#BE3263]" /></a>
     </div>
-    <div className="p-3 bg-pink-200 rounded-xl">
-      <FaInstagram size={20} className="text-pink-500" />
+    <div className="p-3 bg-[#FBB8CF] rounded-xl cursor-pointer">
+      <a
+    href="https://www.instagram.com/drvijayanand_/?utm_source=qr&igsh=MXBjZmI1MzYyNno0MA%3D%3D#"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+      <FaInstagram size={20} className="text-[#BE3263]" /></a>
     </div>
-    <div className="p-3 bg-pink-200 rounded-xl">
-      <FaYoutube size={20} className="text-pink-500" />
+    <div className="p-3 bg-[#FBB8CF] rounded-xl cursor-pointer">
+      <a
+    href="https://www.youtube.com/@drvijayanand_?si=5Rx3zhxJz2NUPMJC"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+      <FaYoutube size={20} className="text-[#BE3263]" /></a>
     </div>
   </div>
 </div>

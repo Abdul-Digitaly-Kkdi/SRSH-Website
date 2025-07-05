@@ -1,6 +1,6 @@
 import React from 'react'
 
-const OurDocter = () => {
+const OurDoctor = () => {
     return (
         <div>
             Coming Soon
@@ -8,4 +8,4 @@ const OurDocter = () => {
     )
 }
 
-export default OurDocter
+export default OurDoctor
