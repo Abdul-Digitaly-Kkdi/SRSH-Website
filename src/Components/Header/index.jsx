@@ -88,7 +88,7 @@ const Header = () => {
                             ) : (
                                 <NavLink
                                     to={link.path}
-                                    className="text-white font-medium hover:text-[#3c4380]"
+                                    className="text-white font-medium hover:"
                                 >
                                     {link.name}
                                 </NavLink>

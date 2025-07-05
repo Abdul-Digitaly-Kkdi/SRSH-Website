@@ -14,13 +14,13 @@ export default function TestimonialPage() {
 
     return (
         <div className="min-h-screen bg-gray-50 py-10 px-4">
-            <h1 className="text-2xl md:text-4xl font-semibold text-rose-700 text-center mb-5">
-                Testnimonials
+            <h1 className="text-3xl md:text-4xl font-semibold text-rose-700 text-center mb-5">
+                Testimonials
             </h1>
             <h1 className="text-rose-400 text-center mb-4">
                 Our Cases & Patient Stories
             </h1>
-            <div className="grid grid-cols-1.5 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1.5 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
                 {videos.map((video) => (
                     <div
                         key={video.id}
@@ -30,7 +30,7 @@ export default function TestimonialPage() {
                         <iframe
                             src={`https://drive.google.com/file/d/${video.id}/preview`}
                             title={video.name}
-                            className="w-full h-90 md:h-90 object-cover cursor-pointer"
+                            className="w-full h-100 md:h-90 object-cover cursor-pointer"
                             allow="autoplay"
                         ></iframe>
                     </div>
