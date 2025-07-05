@@ -3,6 +3,8 @@ import MainLayout from "./Layout";
 import Home from "./Pages/Home";
 import Clinical_Oncology from "./Pages/specialities/Clinical_Oncology";
 import Doctors from "./Pages/doctors";
+import Speciality from "./Pages/specialities/speciality";
+import DeltaCancerFoundation from "./Pages/CSR";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
             element={<Clinical_Oncology />}
           /> */}
           <Route path="/doctors" element={<Doctors />} />
+          <Route path="/specialities/:id" element={<Speciality />} />
+          <Route path="/csr" element={<DeltaCancerFoundation />} />
         </Route>
       </Routes>
     </BrowserRouter>
