@@ -29,7 +29,7 @@ const SpecialitiesGrid = () => {
 
     return (
         <section className="py-12 px-4 md:px-8 w-full xl:w-7/12 mx-auto">
-            <h2 className="text-center text-xl md:text-4xl font-semibold text-rose-700 mb-2">
+            <h2 className="text-center text-3xl md:text-4xl font-semibold text-rose-700 mb-2">
                 Enjoy Specialized Care Through Precision, Artistry, and Experience
             </h2>
 
@@ -45,7 +45,7 @@ const SpecialitiesGrid = () => {
 
                         {/* Content */}
                         <div className="relative z-10 flex flex-col items-center justify-center transition-colors duration-500">
-                            <img src={item.icon} alt={item.name} className="w-10 h-10 mb-3 group-hover:invert group-hover:brightness-200 transition duration-300" />
+                            <img src={item.icon} alt={item.name} className="w-20 h-20 mb-3 group-hover:invert group-hover:brightness-200 transition duration-300" />
                             <p className="text-sm md:text-lg font-semibold text-blue-700 group-hover:text-black transition duration-300">
                                 {item.name}
                             </p>
