@@ -48,7 +48,7 @@ const Review = () => {
         <section className="">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="mb-16 text-center">
-                    <h2 className="text-4xl  font-semibold text-rose-700">What our happy user says!</h2>
+                    <h2 className="text-2xl md:text-4xl font-semibold text-rose-700">What our happy user says!</h2>
                 </div>
 
                 <Swiper
