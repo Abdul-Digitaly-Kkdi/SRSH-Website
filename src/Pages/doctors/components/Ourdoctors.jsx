@@ -88,43 +88,43 @@ const Ourdoctors = () => {
         "https://sriramakrishnahospitaltrichy.com/wp-content/uploads/2025/05/1812334847100807-1024x1024.jpg",
     },
   ];
+
   return (
-    <>
-      <div className="w-full flex flex-col items-center py-12 px-16">
-        <h1 className="text-3xl text-center font-semibold text-pink-700 mb-12 whitespace-pre-line">
-          Our Specialized{"\n"}and{"\n"}Experienced Doctors
-        </h1>
+    <div className="w-full flex flex-col items-center py-12 px-4 sm:px-6 lg:px-16 bg-white">
+      <h1 className="text-3xl sm:text-4xl font-semibold text-pink-700 text-center mb-2">
+        Our Doctors
+      </h1>
+      <p className="text-sm sm:text-base text-green-800 text-center font-medium mb-8">
+        Our Specialized and Experienced Doctors
+      </p>
 
-        <div className="w-10/12 flex flex-wrap gap-6 justify-center">
-          {doctors &&
-            doctors.map((d) => (
-              <div
-                key={d.id}
-                className="group relative w-[250px] rounded-lg overflow-hidden shadow-md"
-              >
-                <img
-                  src={d.image}
-                  alt={d.name}
-                  className="w-full h-[300px] object-cover"
-                />
+      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 justify-items-center w-full max-w-7xl">
+        {doctors.map((d) => (
+          <div
+            key={d.id}
+            className="group relative rounded-lg overflow-hidden shadow-md"
+          >
+            <img
+              src={d.image}
+              alt={d.name}
+              className="w-full h-[300px] object-cover"
+            />
 
-                {/* Gradient background + text together as a single overlay */}
-                <div className="absolute bottom-0 left-0 w-full h-[70%] flex items-end justify-center pointer-events-none">
-                  <div className="w-full h-full bg-gradient-to-t from-white/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out absolute bottom-0 left-0 z-0"></div>
+            {/* Overlay */}
+            <div className="absolute bottom-0 left-0 w-full h-[70%] flex items-end justify-center pointer-events-none">
+              <div className="w-full h-full bg-gradient-to-t from-white/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out absolute bottom-0 left-0 z-0"></div>
 
-                  {/* Text on top of gradient */}
-                  <div className="relative z-10 opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out text-[#291a1f] p-3 text-center">
-                    <h2 className="font-semibold text-base">{d.name}</h2>
-                    <p className="text-xs font-semibold mt-1">
-                      {d.specialization}
-                    </p>
-                  </div>
-                </div>
+              <div className="relative z-10 opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out text-[#291a1f] p-3 text-center">
+                <h2 className="font-semibold text-base sm:text-lg">{d.name}</h2>
+                <p className="text-xs sm:text-sm font-medium mt-1">
+                  {d.specialization}
+                </p>
               </div>
-            ))}
-        </div>
+            </div>
+          </div>
+        ))}
       </div>
-    </>
+    </div>
   );
 };
 
