@@ -6,20 +6,18 @@ function Touch() {
   return (
     <>
 
-    <div
-        className="relative w-full h-[150px] md:h-[300px] bg-cover bg-center"
-        style={{ backgroundImage: `url(${main_image1})` }}
-      >
-        {/* Overlay */}
-        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
-
-        {/* Content (like "Contact Us") */}
-        <div
-  className="relative z-10 flex items-center justify-start h-full text-white text-4xl font-semibold px-4 md:px-10"
->
-  Contact Us
-</div>
-      </div>
+    <div className="relative w-full h-[15vh] md:h-[40vh]">
+            <img
+              src={main_image1}
+              className="w-full h-full object-cover"
+              alt="Doctors"
+            />
+            <div className="absolute inset-0 bg-black/60 z-10">
+              <h1 className="text-2xl md:text-5xl py-10 pl-6 md:py-24 md:pl-16 font-sans text-white w-full">
+                Contact
+              </h1>
+            </div>
+          </div>
 
       
       </>

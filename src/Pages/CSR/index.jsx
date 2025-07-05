@@ -1,8 +1,23 @@
 import React from 'react';
-import deltaImage from '../../assets/delta-cancer-foundation.jpg'; // Replace with your actual image path
+import deltaImage from '../../assets/delta-cancer-foundation.jpg'; 
+import csr from "../../assets/csr.webp";
 
 const DeltaCancerFoundation = () => {
     return (
+        <>
+<div className="relative w-full h-[15vh] md:h-[40vh]">
+            <img
+              src={csr}
+              className="w-full h-full object-cover"
+              alt="Doctors"
+            />
+            <div className="absolute inset-0 bg-black/60 z-10">
+              <h1 className="text-2xl md:text-5xl py-10 pl-6 md:py-24 md:pl-16 font-sans text-white w-full">
+                CSR
+              </h1>
+            </div>
+          </div>
+
         <section className="w-full bg-gray-50 py-12 px-4 md:px-10 lg:px-20 xl:px-32">
             <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-10">
                 {/* Text Content */}
@@ -29,6 +44,7 @@ const DeltaCancerFoundation = () => {
                 </div>
             </div>
         </section>
+        </>
     );
 };
 

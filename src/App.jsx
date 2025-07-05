@@ -6,6 +6,9 @@ import Doctors from "./Pages/doctors";
 import Speciality from "./Pages/specialities/speciality";
 import DeltaCancerFoundation from "./Pages/CSR";
 import Contact from "./Pages/Contact";
+import Blogs from "./Pages/Blogs";
+import BlogDetail from "./Pages/Blogs/BlogDetails";
+import Gallery from "./Pages/Gallery";
 
 function App() {
   return (
@@ -13,15 +16,15 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
-<<<<<<< HEAD
           <Route path="/contact" element={<Contact />} />
-=======
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs/:id" element={<BlogDetail />} />
+          <Route path="/gallery" element={<Gallery />} />
           {/* <Route
             path="/specialities/clinical-oncology"
             element={<Clinical_Oncology />}
           /> */}
           <Route path="/doctors" element={<Doctors />} />
->>>>>>> 0816aa6136690abe75a980b97b25c21012f0e8d3
           <Route path="/specialities/:id" element={<Speciality />} />
           <Route path="/csr" element={<DeltaCancerFoundation />} />
         </Route>
