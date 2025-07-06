@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { ChevronDown, Factory, Menu, X } from 'lucide-react';
 import Logo from "../../assets/logo.png";
 import service from "../../assets/247.png";
@@ -55,13 +55,17 @@ const Header = () => {
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
+    const nav = useNavigate();
+
     return (
         <header className="sticky top-0 z-50 shadow-md"
             style={{
                 background: 'linear-gradient(90deg, hsla(339, 100%, 88%, 1) 0%, hsla(339, 65%, 44%, 1) 50%, hsla(339, 100%, 88%, 1) 100%)',
             }}>
             <div className="w-full xl:max-w-11/12 mx-auto flex items-center justify-between px-4 py-3">
-                <div className="flex flex-col ">
+                <div className="flex flex-col cursor-pointer" onClick={() => (
+                    nav('/')
+                )}>
                     <img src={Logo} alt="Logo" className="h-14 xl:h-16 w-auto" />
                     <p className='text-gray-800 hidden lg:flex ml-4 text-xs '>West Thillai Nagar, Tiruchirappalli</p>
                 </div>
@@ -77,7 +81,7 @@ const Header = () => {
                             {link.subMenu ? (
                                 <button
                                     onClick={() => setDropdownOpen(prev => !prev)}
-                                    className="flex items-center gap-1 text-white font-medium hover:text-[#3c4380]"
+                                    className="flex items-center gap-1 text-white font-medium"
                                 >
                                     {link.name}
                                     <ChevronDown
@@ -135,7 +139,7 @@ const Header = () => {
             <div className='bg-white py-1'>
                 <Marquee>
                     {marquee.map((data) => (
-                        <p className='px-4'>❤  {data}</p>
+                        <p className='px-4'><span className='text-red-500 animate-bounce'>❤</span>  {data}</p>
                     ))}
                 </Marquee>
             </div>

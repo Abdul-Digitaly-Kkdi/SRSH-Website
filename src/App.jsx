@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import MainLayout from "./Layout";
 import Home from "./Pages/Home";
 import Clinical_Oncology from "./Pages/specialities/Clinical_Oncology";
@@ -13,6 +13,17 @@ import Gallery from "./Pages/Gallery";
 import ScrollToTop from "./Components/ScrollToTop";
 import ScrollToTopButton from "./Components/ScrollToTopButton";
 import StickyContactButtons from "./Components/StickyContactButtons";
+import NotFound from "./Pages/404/Index";
+
+// export const ScrollToTop = () => {
+//   const { pathname } = useLocation();
+
+//   useEffect(() => {
+//     window.scrollTo({ top: 0, behavior: "smooth" }); // or just: window.scrollTo(0, 0);
+//   }, [pathname]);
+
+//   return null;
+// };
 
 function App() {
   return (
@@ -35,6 +46,7 @@ function App() {
           <Route path="/doctors" element={<Doctors />} />
           <Route path="/specialities/:id" element={<Speciality />} />
           <Route path="/csr" element={<DeltaCancerFoundation />} />
+          <Route path="/*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
