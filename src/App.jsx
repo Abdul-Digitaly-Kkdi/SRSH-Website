@@ -15,16 +15,6 @@ import ScrollToTopButton from "./Components/ScrollToTopButton";
 import StickyContactButtons from "./Components/StickyContactButtons";
 import NotFound from "./Pages/404/Index";
 
-// export const ScrollToTop = () => {
-//   const { pathname } = useLocation();
-
-//   useEffect(() => {
-//     window.scrollTo({ top: 0, behavior: "smooth" }); // or just: window.scrollTo(0, 0);
-//   }, [pathname]);
-
-//   return null;
-// };
-
 function App() {
   return (
     <BrowserRouter>
@@ -44,7 +34,7 @@ function App() {
             element={<Clinical_Oncology />}
           /> */}
           <Route path="/doctors" element={<Doctors />} />
-          <Route path="/specialities/:id" element={<Speciality />} />
+          {/* <Route path="/specialities/:id" element={<Speciality />} /> */}
           <Route path="/csr" element={<DeltaCancerFoundation />} />
           <Route path="/*" element={<NotFound />} />
         </Route>

@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Ourdoctors = () => {
+const Ourdoctors_min = () => {
   const doctors = [
     {
       id: "0",
@@ -77,4 +77,4 @@ const Ourdoctors = () => {
   );
 };
 
-export default Ourdoctors;
+export default Ourdoctors_min;

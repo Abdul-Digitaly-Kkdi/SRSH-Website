@@ -1,5 +1,5 @@
 import aboutbanner from "../../assets/images/about/about_top_banner.jpg";
-import Ourdoctors_random from "../misc/Ourdoctors_random";
+import Ourdoctors_min from "../misc/Ourdoctors_min";
 import About_Stats from "./components/About_Stats";
 import Cards from "./components/cards";
 import Chairman from "./components/chairman";
@@ -26,7 +26,7 @@ const About = () => {
       <Cards />
       <Hospital />
       <About_Stats />
-      <Ourdoctors_random />
+      <Ourdoctors_min />
     </>
   );
 };
