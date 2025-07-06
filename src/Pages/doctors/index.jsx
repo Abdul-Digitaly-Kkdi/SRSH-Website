@@ -1,9 +1,22 @@
 import ourdoctors from "../../assets/images/ourdoctors/ourdoctors.webp";
 import Maindoctor from "./components/Maindoctor";
-
 import Ourdoctors from "./components/Ourdoctors";
 
+import React, { useRef, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 const Doctors = () => {
+  const ourDoctorsRef = useRef(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === "#ourdoctors" && ourDoctorsRef.current) {
+      setTimeout(() => {
+        ourDoctorsRef.current.scrollIntoView({ behavior: "smooth" });
+      }, 100); // short delay to ensure component mounts
+    }
+  }, [location]);
+
   return (
     <>
       {/* /// top content /// */}
@@ -46,8 +59,10 @@ const Doctors = () => {
         </div>
       </div>
 
-      {/* our special doctors */}
-      <Ourdoctors />
+      {/* Our special doctors */}
+      <div id="ourdoctors-section" className="pt-16 -mt-16 scroll-mt-16">
+        <Ourdoctors />
+      </div>
     </>
   );
 };

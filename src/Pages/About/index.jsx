@@ -1,5 +1,9 @@
 import aboutbanner from "../../assets/images/about/about_top_banner.jpg";
+import Ourdoctors_random from "../misc/Ourdoctors_random";
 import About_Stats from "./components/About_Stats";
+import Cards from "./components/cards";
+import Chairman from "./components/chairman";
+import Hospital from "./components/hospital";
 
 const About = () => {
   return (
@@ -18,7 +22,11 @@ const About = () => {
         </div>
       </div>
 
+      <Chairman />
+      <Cards />
+      <Hospital />
       <About_Stats />
+      <Ourdoctors_random />
     </>
   );
 };

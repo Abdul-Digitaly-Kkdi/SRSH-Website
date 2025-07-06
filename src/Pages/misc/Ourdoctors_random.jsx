@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Ourdoctors = () => {
+const Ourdoctors_random = () => {
   const doctors = [
     {
       id: "0",
@@ -132,7 +132,9 @@ const Ourdoctors = () => {
 
       <button
         className="bg-rose-500 text-white rounded px-3 py-2 mt-10 cursor-pointer hover:scale-105"
-        onClick={() => navigate("/doctors")}
+        onClick={() => {
+          navigate("/doctors#ourdoctors-section");
+        }}
       >
         View All
       </button>
@@ -140,4 +142,4 @@ const Ourdoctors = () => {
   );
 };
 
-export default Ourdoctors;
+export default Ourdoctors_random;

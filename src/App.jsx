@@ -10,10 +10,16 @@ import About from "./Pages/About";
 import Blogs from "./Pages/Blogs";
 import BlogDetail from "./Pages/Blogs/BlogDetails";
 import Gallery from "./Pages/Gallery";
+import ScrollToTop from "./Components/ScrollToTop";
+import ScrollToTopButton from "./Components/ScrollToTopButton";
+import StickyContactButtons from "./Components/StickyContactButtons";
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
+      <ScrollToTopButton />
+      <StickyContactButtons />
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
