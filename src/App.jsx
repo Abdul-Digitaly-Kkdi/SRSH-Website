@@ -10,27 +10,17 @@ import About from "./Pages/About";
 import Blogs from "./Pages/Blogs";
 import BlogDetail from "./Pages/Blogs/BlogDetails";
 import Gallery from "./Pages/Gallery";
-import { useEffect } from "react";
+import ScrollToTop from "./Components/ScrollToTop";
+import ScrollToTopButton from "./Components/ScrollToTopButton";
+import StickyContactButtons from "./Components/StickyContactButtons";
 import NotFound from "./Pages/404/Index";
-
-
-
-
-export const ScrollToTop = () => {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" }); // or just: window.scrollTo(0, 0);
-  }, [pathname]);
-
-  return null;
-};
-
 
 function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <ScrollToTopButton />
+      <StickyContactButtons />
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
@@ -44,7 +34,7 @@ function App() {
             element={<Clinical_Oncology />}
           /> */}
           <Route path="/doctors" element={<Doctors />} />
-          <Route path="/specialities/:id" element={<Speciality />} />
+          {/* <Route path="/specialities/:id" element={<Speciality />} /> */}
           <Route path="/csr" element={<DeltaCancerFoundation />} />
           <Route path="/*" element={<NotFound />} />
         </Route>
