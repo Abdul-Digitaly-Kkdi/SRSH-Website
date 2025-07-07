@@ -2,15 +2,17 @@ import React, { useState } from "react";
 import gallery from "../../assets/gallery.webp";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import gallery1 from "../../assets/gallery/gallery1.webp";
+import gallery2 from "../../assets/gallery/gallery2.webp";
+import gallery3 from "../../assets/gallery/gallery3.webp";
+import gallery4 from "../../assets/gallery/gallery4.webp";
+import gallery5 from "../../assets/gallery/gallery5.webp";
+import gallery6 from "../../assets/gallery/gallery6.webp";
+import gallery7 from "../../assets/gallery/gallery7.webp";
 
 
 const galleryImages = [
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQucKCgIS3OZL7tFZZXXjdtKBTZp0P6my2nJQ&s",
-  "https://www.rajkotcancersociety.org/wp-content/uploads/2023/12/DSC_43881.webp",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGbyr7UbleCvcV-Y9zgIAb8ewN48-8c9iFLQ&s",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzxnbBSZ6RzJWQsoHluj0ucmsLmuoIYZ3Y5g&s",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjE-avqMApLuOoMPYBxBjm6N2cylYb_lPDLQ&s",
-  "https://cdn.prod.website-files.com/66b47a899715a714443f05c3/66b482eee7a3bffea0f44a09_about_2014-02-03_m_1.webp",
+  gallery1, gallery2, gallery3, gallery4, gallery5, gallery6, gallery7
 ];
 
 function Gallery() {
@@ -38,24 +40,20 @@ function Gallery() {
         </h2>
 
         {/* Masonry Grid */}
-        <div
-  className="columns-1 sm:columns-2 md:columns-3 gap-6 space-y-6"
-  style={{ columnGap: "1.5rem" }}
->
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
   {galleryImages.map((img, idx) => (
     <div
       key={idx}
-      className="relative cursor-pointer overflow-hidden rounded-lg shadow-lg break-inside-avoid group"
+      className="relative cursor-pointer overflow-hidden rounded-lg shadow-lg group"
       onClick={() => {
         setIndex(idx);
         setOpen(true);
       }}
-      style={{ marginBottom: "1.5rem" }}
     >
       <img
         src={img}
         alt={`Gallery image ${idx + 1}`}
-        className="w-full rounded-lg object-cover transition-transform duration-500 group-hover:scale-110"
+        className="w-full h-64 object-cover rounded-lg transition-transform duration-500 group-hover:scale-110"
         loading="lazy"
       />
       <div className="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
