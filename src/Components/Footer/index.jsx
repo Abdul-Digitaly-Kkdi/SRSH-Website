@@ -79,7 +79,9 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-3">Contact Us</h3>
           <ul className="space-y-2 text-sm">
             <li className="flex items-start gap-2">
-              <MapPin className="w-4 h-4 mt-1" />
+              <div>
+                <MapPin className="w-4 h-4 mt-1" />
+              </div>
               <span>
                 B20, 2nd Cross Rd, West Thillai Nagar, Tiruchirappalli, Tamil
                 Nadu 620018
