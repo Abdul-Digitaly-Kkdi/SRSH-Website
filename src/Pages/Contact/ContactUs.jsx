@@ -6,8 +6,13 @@ import { FaYoutube } from "react-icons/fa";
 import { MdOutlineMail } from "react-icons/md";
 import { MdOutlineLocationOn } from "react-icons/md";
 import { MdOutlineCall } from "react-icons/md";
+import emailjs from "emailjs-com";
 
 function ContactUs() {
+  const SERVICE_ID = "service_jgstobf"; // e.g., service_gmail
+  const TEMPLATE_ID = "template_rzp9o9z"; // e.g., template_contact
+  const PUBLIC_KEY = "Zr5o9Z93wf4aMsUnF"; // from dashboard
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -60,8 +65,22 @@ function ContactUs() {
     const formErrors = validate();
     setErrors(formErrors);
     if (Object.keys(formErrors).length === 0) {
-      console.log("Form Submitted", formData);
-      // Reset form or send data to API here
+      emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, PUBLIC_KEY).then(
+        () => {
+          alert("Message sent successfully!");
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            phone: "",
+            message: "",
+          });
+        },
+        (error) => {
+          alert("Failed to send message. Please try again.");
+          console.error(error);
+        }
+      );
     }
   };
 
@@ -71,7 +90,10 @@ function ContactUs() {
       <div className="md:w-10/12 mx-auto">
         <div className="flex flex-col lg:flex-row px-4 py-10 gap-10">
           {/* Left Side - Contact Form */}
-          <div className="w-full lg:w-6/12 rounded-md  px-5 py-3" style={{ boxShadow: '0 0 10px rgba(0,0,0,0.15)' }}>
+          <div
+            className="w-full lg:w-6/12 rounded-md  px-5 py-3"
+            style={{ boxShadow: "0 0 10px rgba(0,0,0,0.15)" }}
+          >
             <h2 className="text-2xl md:text-4xl font-semibold mb-6 text-rose-700">
               Contact with us
             </h2>
@@ -173,7 +195,10 @@ function ContactUs() {
             </form>
           </div>
 
-          <div className="w-full lg:w-6/12 shadow-lg rounded-md px-4 flex flex-col justify-start items-start py-3" style={{ boxShadow: '0 0 10px rgba(0,0,0,0.15)' }}>
+          <div
+            className="w-full lg:w-6/12 shadow-lg rounded-md px-4 flex flex-col justify-start items-start py-3"
+            style={{ boxShadow: "0 0 10px rgba(0,0,0,0.15)" }}
+          >
             <p className="text-2xl md:text-4xl text-rose-700 font-semibold mb-6 text-left px-1">
               Contact Information
             </p>
@@ -236,40 +261,41 @@ function ContactUs() {
               </div>
             </div>
 
-<div className="w-full flex flex-col items-center text-center">
-  
-  <p className="text-xl font-semibold text-cyan-800 py-3 md:py-0 mb-4">
-    Follow us
-  </p>
-  
-  <div className="flex justify-center items-center gap-5 mb-3">
-    <div className="p-3 bg-[#FBB8CF] rounded-xl cursor-pointer">
-      <a
-    href="https://www.facebook.com/people/Dr-Vijay-Anand/61554146246375/?rdid=wXmFs0MOABN6gyUX&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BvvyyFdde%2F"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-      <FaFacebookF size={20} className="text-[#BE3263]" /></a>
-    </div>
-    <div className="p-3 bg-[#FBB8CF] rounded-xl cursor-pointer">
-      <a
-    href="https://www.instagram.com/drvijayanand_/?utm_source=qr&igsh=MXBjZmI1MzYyNno0MA%3D%3D#"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-      <FaInstagram size={20} className="text-[#BE3263]" /></a>
-    </div>
-    <div className="p-3 bg-[#FBB8CF] rounded-xl cursor-pointer">
-      <a
-    href="https://www.youtube.com/@drvijayanand_?si=5Rx3zhxJz2NUPMJC"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-      <FaYoutube size={20} className="text-[#BE3263]" /></a>
-    </div>
-  </div>
-</div>
+            <div className="w-full flex flex-col items-center text-center">
+              <p className="text-xl font-semibold text-cyan-800 py-3 md:py-0 mb-4">
+                Follow us
+              </p>
 
+              <div className="flex justify-center items-center gap-5 mb-3">
+                <div className="p-3 bg-[#FBB8CF] rounded-xl cursor-pointer">
+                  <a
+                    href="https://www.facebook.com/people/Dr-Vijay-Anand/61554146246375/?rdid=wXmFs0MOABN6gyUX&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BvvyyFdde%2F"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaFacebookF size={20} className="text-[#BE3263]" />
+                  </a>
+                </div>
+                <div className="p-3 bg-[#FBB8CF] rounded-xl cursor-pointer">
+                  <a
+                    href="https://www.instagram.com/drvijayanand_/?utm_source=qr&igsh=MXBjZmI1MzYyNno0MA%3D%3D#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaInstagram size={20} className="text-[#BE3263]" />
+                  </a>
+                </div>
+                <div className="p-3 bg-[#FBB8CF] rounded-xl cursor-pointer">
+                  <a
+                    href="https://www.youtube.com/@drvijayanand_?si=5Rx3zhxJz2NUPMJC"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaYoutube size={20} className="text-[#BE3263]" />
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

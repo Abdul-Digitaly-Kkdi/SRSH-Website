@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import appoinment from "../../assets/appoinment.webp";
+import emailjs from "emailjs-com";
 
 function Appoinment() {
+  const SERVICE_ID = "service_jgstobf"; // e.g., service_gmail
+  const TEMPLATE_ID = "template_5sw9fvk"; // e.g., template_contact
+  const PUBLIC_KEY = "Zr5o9Z93wf4aMsUnF"; // from dashboard
   const [formData, setFormData] = useState({
     department: "",
     name: "",
@@ -49,14 +53,53 @@ function Appoinment() {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [emailError, setEmailError] = useState("");
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formErrors = validate();
     setErrors(formErrors);
+    setSuccess(false);
+    setEmailError("");
 
     if (Object.keys(formErrors).length === 0) {
-      console.log("Form Submitted", formData);
-      // Submit to API or reset
+      setLoading(true);
+
+      const templateParams = {
+        department: formData.department,
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        date: formData.date,
+        time: formData.time,
+      };
+
+      try {
+        const result = await emailjs.send(
+          SERVICE_ID, // ✅ using your constant: "service_jgstobf"
+          TEMPLATE_ID, // ✅ using your constant: "template_5sw9fvk"
+          templateParams,
+          PUBLIC_KEY // ✅ using your constant: "Zr5o9Z93wf4aMsUnF"
+        );
+
+        console.log("SUCCESS!", result.text);
+        setSuccess(true);
+        setFormData({
+          department: "",
+          name: "",
+          email: "",
+          phone: "",
+          date: "",
+          time: "",
+        });
+      } catch (error) {
+        console.error("FAILED...", error);
+        setEmailError("Something went wrong. Please try again later.");
+      } finally {
+        setLoading(false);
+      }
     }
   };
 
