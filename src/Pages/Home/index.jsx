@@ -8,10 +8,13 @@ import Review from './Components/Reviews'
 import OurDoctor from './Components/OurDocter'
 import Insurance from './Components/Insurance'
 import TestimonialPage from './Components/Testimoniel'
+import Location from "../../Pages/Contact/Location"
+import Appoinment from '../Contact/Appoinment'
+
 
 const Home = () => {
     return (
-        <div className=''>
+        <div className='mb-5'>
             <LandingCarousel />
             <FeatureCards />
             <HospitalDetails />
@@ -21,6 +24,8 @@ const Home = () => {
             <TestimonialPage />
             <OurDoctor />
             <Insurance />
+            <Appoinment />
+            <Location />
 
         </div>
     )

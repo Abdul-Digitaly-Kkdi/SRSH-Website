@@ -14,6 +14,7 @@ import ScrollToTop from "./Components/ScrollToTop";
 import ScrollToTopButton from "./Components/ScrollToTopButton";
 import StickyContactButtons from "./Components/StickyContactButtons";
 import NotFound from "./Pages/404/Index";
+import Testimonial from "./Pages/Testimonial/Index";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path="/doctors" element={<Doctors />} />
           {/* <Route path="/specialities/:id" element={<Speciality />} /> */}
           <Route path="/csr" element={<DeltaCancerFoundation />} />
+          <Route path="/testimonials" element={<Testimonial />} />
           <Route path="/*" element={<NotFound />} />
         </Route>
       </Routes>
