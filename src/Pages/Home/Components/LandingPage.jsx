@@ -9,6 +9,7 @@ import 'swiper/css/navigation';
 // import './carousel.css'; // For custom overlay styling (see below)
 import slide1 from '../../../assets/slide/slide.jpeg'
 import slide2 from '../../../assets/slide/slide2.jpeg'
+import logo from "../../../assets/logo.png"
 
 const slides = [
     {
@@ -72,6 +73,7 @@ const LandingCarousel = () => {
                             <div
                                 className="absolute inset-0 bg-[rgba(0,0,0,0.4)] flex flex-col justify-center items-start px-6 md:px-20 text-white text-left"
                             >
+                                <img src={logo} alt="logo" className='hidden md:flex h-20 my-2' />
                                 <h2 className="text-2xl md:text-4xl font-bold mb-4 max-w-3xl">
                                     {slide.title}
                                 </h2>

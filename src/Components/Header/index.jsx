@@ -59,10 +59,11 @@ const Header = () => {
     const nav = useNavigate();
 
     return (
-        <header className="sticky top-0 z-50 shadow-md"
-            style={{
-                background: 'linear-gradient(90deg, hsla(339, 100%, 88%, 1) 0%, hsla(339, 65%, 44%, 1) 50%, hsla(339, 100%, 88%, 1) 100%)',
-            }}>
+        <header className="sticky top-0 z-50 shadow-md bg-gradient-to-t from-rose-300 to-rose-400"
+        // style={{
+        //     background: 'linear-gradient(90deg, hsla(339, 100%, 88%, 1) 0%, hsla(339, 65%, 44%, 1) 50%, hsla(339, 100%, 88%, 1) 100%)',
+        // }}
+        >
             <div className="w-full xl:max-w-11/12 mx-auto flex items-center justify-between px-4 py-3">
                 <div className="flex flex-col cursor-pointer" onClick={() => (
                     nav('/')
