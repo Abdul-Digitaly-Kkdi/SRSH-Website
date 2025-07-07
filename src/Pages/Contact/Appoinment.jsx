@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import appoinment from "../../assets/appoinment.webp";
-<<<<<<< HEAD
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-=======
+
 import emailjs from "emailjs-com";
->>>>>>> 98cf997b5aa6cd07d4a26ed0fa2ee2e3abb88320
 
 function Appoinment() {
   const SERVICE_ID = "service_jgstobf"; // e.g., service_gmail
@@ -68,6 +64,7 @@ function Appoinment() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [emailError, setEmailError] = useState("");
+  const [submissionError, setSubmissionError] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -77,16 +74,6 @@ function Appoinment() {
     setEmailError("");
 
     if (Object.keys(formErrors).length === 0) {
-<<<<<<< HEAD
-      console.log("Form Submitted", formData);
-      toast.success("Successfully submitted!");
-      setFormData({ department: "",
-    name: "",
-    email: "",
-    phone: "",
-    date: "",
-    time: "" });
-=======
       setLoading(true);
 
       const templateParams = {
@@ -108,6 +95,9 @@ function Appoinment() {
 
         console.log("SUCCESS!", result.text);
         setSuccess(true);
+        setTimeout(() => {
+          setSuccess(false);
+        }, 3000);
         setFormData({
           department: "",
           name: "",
@@ -118,11 +108,13 @@ function Appoinment() {
         });
       } catch (error) {
         console.error("FAILED...", error);
-        setEmailError("Something went wrong. Please try again later.");
+        setSubmissionError("Something went wrong.");
+        setTimeout(() => {
+          setSubmissionError("");
+        }, 3000);
       } finally {
         setLoading(false);
       }
->>>>>>> 98cf997b5aa6cd07d4a26ed0fa2ee2e3abb88320
     }
   };
 
@@ -271,30 +263,37 @@ function Appoinment() {
               </div>
 
               <div className="py-5">
+                <div className="min-h-[18px] mt-1">
+                  {success && (
+                    <p className="text-green-600 text-sm font-medium mb-2">
+                      Your message has been successfully sent!
+                    </p>
+                  )}
+                  {submissionError && (
+                    <p className="text-red-600 text-sm font-medium mb-2">
+                      {submissionError}
+                    </p>
+                  )}
+                </div>
                 <button
                   type="submit"
-                  className="flex items-center justify-center gap-2 bg-gradient-to-r from-red-500 to-pink-500 text-white hover:from-pink-500 hover:to-red-500 hover:text-black px-8 py-3 rounded-full mt-2 cursor-pointer"
+                  disabled={loading}
+                  className={`flex items-center justify-center gap-2 px-8 py-3 rounded-full mt-2 cursor-pointer transition
+    ${
+      loading
+        ? "bg-gray-300 text-gray-600 cursor-not-allowed"
+        : "bg-gradient-to-r from-red-500 to-pink-500 text-white hover:from-pink-500 hover:to-red-500 hover:text-black"
+    }
+  `}
                 >
-                  Book an Appointment <FiArrowUpRight />
+                  {loading ? "Submitting..." : "Book an Appointment"}{" "}
+                  <FiArrowUpRight />
                 </button>
               </div>
             </form>
           </div>
         </div>
       </div>
-
-      <ToastContainer
-  position="top-right"
-  autoClose={3000}
-  hideProgressBar={false}
-  newestOnTop={false}
-  closeOnClick
-  rtl={false}
-  pauseOnFocusLoss
-  draggable
-  pauseOnHover
-  theme="colored"
-/>
     </>
   );
 }

@@ -8,9 +8,6 @@ import { MdOutlineLocationOn } from "react-icons/md";
 import { MdOutlineCall } from "react-icons/md";
 import emailjs from "emailjs-com";
 
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
 function ContactUs() {
   const SERVICE_ID = "service_jgstobf"; // e.g., service_gmail
   const TEMPLATE_ID = "template_rzp9o9z"; // e.g., template_contact
@@ -24,7 +21,10 @@ function ContactUs() {
     message: "",
   });
 
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
   const [errors, setErrors] = useState({});
+  const [submissionError, setSubmissionError] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -70,35 +70,38 @@ function ContactUs() {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formErrors = validate();
+    setSuccess(false);
     setErrors(formErrors);
-    if (Object.keys(formErrors).length === 0) {
-<<<<<<< HEAD
-      console.log("Form Submitted", formData);
-toast.success("Successfully submitted!");
-setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
 
-      // Reset form or send data to API here
-=======
-      emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, PUBLIC_KEY).then(
-        () => {
-          alert("Message sent successfully!");
-          setFormData({
-            firstName: "",
-            lastName: "",
-            email: "",
-            phone: "",
-            message: "",
-          });
-        },
-        (error) => {
-          alert("Failed to send message. Please try again.");
-          console.error(error);
-        }
-      );
->>>>>>> 98cf997b5aa6cd07d4a26ed0fa2ee2e3abb88320
+    if (Object.keys(formErrors).length === 0) {
+      setLoading(true);
+      try {
+        await emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, PUBLIC_KEY);
+
+        setSuccess(true);
+        setTimeout(() => {
+          setSuccess(false);
+        }, 3000);
+
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      } catch (error) {
+        console.error(error);
+        setSubmissionError("Something went wrong.");
+        setTimeout(() => {
+          setSubmissionError("");
+        }, 3000);
+      } finally {
+        setLoading(false);
+      }
     }
   };
 
@@ -109,11 +112,7 @@ setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
         <div className="flex flex-col xl:flex-row px-4 py-10 gap-10">
           {/* Left Side - Contact Form */}
           <div
-<<<<<<< HEAD
-            className="w-full xl:w-6/12 rounded-md  px-5 py-3"
-=======
             className="w-full lg:w-6/12 rounded-md  px-5 py-3"
->>>>>>> 98cf997b5aa6cd07d4a26ed0fa2ee2e3abb88320
             style={{ boxShadow: "0 0 10px rgba(0,0,0,0.15)" }}
           >
             <h2 className="text-2xl md:text-4xl font-semibold mb-6 text-rose-700">
@@ -221,22 +220,38 @@ setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
               </div>
 
               <div className="py-5">
+                <div className="min-h-[18px] mt-1">
+                  {success && (
+                    <p className="text-green-600 text-sm font-medium mb-2">
+                      Your message has been successfully sent!
+                    </p>
+                  )}
+                  {submissionError && (
+                    <p className="text-red-600 text-sm font-medium mb-2">
+                      {submissionError}
+                    </p>
+                  )}
+                </div>
+
                 <button
                   type="submit"
-                  className="flex items-center justify-center gap-2 bg-gradient-to-r from-red-500 to-pink-500 text-white hover:from-pink-500 hover:to-red-500 hover:text-black px-8 py-3 rounded-full mt-2 cursor-pointer"
+                  disabled={loading}
+                  className={`flex items-center justify-center gap-2 px-8 py-3 rounded-full mt-2 transition cursor-pointer
+      ${
+        loading
+          ? "bg-gray-300 text-gray-600 cursor-not-allowed"
+          : "bg-gradient-to-r from-red-500 to-pink-500 text-white hover:from-pink-500 hover:to-red-500 hover:text-black"
+      }
+    `}
                 >
-                  Submit <FiArrowUpRight />
+                  {loading ? "Submitting..." : "Submit"} <FiArrowUpRight />
                 </button>
               </div>
             </form>
           </div>
 
           <div
-<<<<<<< HEAD
-            className="w-full xl:w-6/12 shadow-lg rounded-md px-4 flex flex-col justify-start items-start py-3"
-=======
             className="w-full lg:w-6/12 shadow-lg rounded-md px-4 flex flex-col justify-start items-start py-3"
->>>>>>> 98cf997b5aa6cd07d4a26ed0fa2ee2e3abb88320
             style={{ boxShadow: "0 0 10px rgba(0,0,0,0.15)" }}
           >
             <p className="text-2xl md:text-4xl text-rose-700 font-semibold mb-6 text-left px-1">
@@ -313,24 +328,15 @@ setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
               </p>
 
               <div className="flex justify-center items-center gap-5 mb-3">
-<<<<<<< HEAD
-                <div className="p-3 bg-[#FBB8CF] rounded-xl">
-=======
                 <div className="p-3 bg-[#FBB8CF] rounded-xl cursor-pointer">
->>>>>>> 98cf997b5aa6cd07d4a26ed0fa2ee2e3abb88320
                   <a
                     href="https://www.facebook.com/people/Dr-Vijay-Anand/61554146246375/?rdid=wXmFs0MOABN6gyUX&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BvvyyFdde%2F"
                     target="_blank"
                     rel="noopener noreferrer"
-<<<<<<< HEAD
-                    className="cursor-pointer"
-=======
->>>>>>> 98cf997b5aa6cd07d4a26ed0fa2ee2e3abb88320
                   >
                     <FaFacebookF size={20} className="text-[#BE3263]" />
                   </a>
                 </div>
-<<<<<<< HEAD
                 <div className="p-3 bg-[#FBB8CF] rounded-xl">
                   <a
                     href="https://www.instagram.com/s_r_s_hospital?igsh=N3d6YTJnZzQ1ajgx"
@@ -347,22 +353,6 @@ setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
                     target="_blank"
                     rel="noopener noreferrer"
                     className="cursor-pointer"
-=======
-                <div className="p-3 bg-[#FBB8CF] rounded-xl cursor-pointer">
-                  <a
-                    href="https://www.instagram.com/drvijayanand_/?utm_source=qr&igsh=MXBjZmI1MzYyNno0MA%3D%3D#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaInstagram size={20} className="text-[#BE3263]" />
-                  </a>
-                </div>
-                <div className="p-3 bg-[#FBB8CF] rounded-xl cursor-pointer">
-                  <a
-                    href="https://www.youtube.com/@drvijayanand_?si=5Rx3zhxJz2NUPMJC"
-                    target="_blank"
-                    rel="noopener noreferrer"
->>>>>>> 98cf997b5aa6cd07d4a26ed0fa2ee2e3abb88320
                   >
                     <FaYoutube size={20} className="text-[#BE3263]" />
                   </a>
@@ -372,19 +362,6 @@ setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
           </div>
         </div>
       </div>
-
-      <ToastContainer
-  position="top-right"
-  autoClose={3000}
-  hideProgressBar={false}
-  newestOnTop={false}
-  closeOnClick
-  rtl={false}
-  pauseOnFocusLoss
-  draggable
-  pauseOnHover
-  theme="colored"
-/>
     </>
   );
 }
