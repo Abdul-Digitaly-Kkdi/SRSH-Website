@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import { FaFacebookF } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
+import { FaSquareInstagram } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
 import { MdOutlineMail } from "react-icons/md";
 import { MdOutlineLocationOn } from "react-icons/md";
 import { MdOutlineCall } from "react-icons/md";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function ContactUs() {
   const [formData, setFormData] = useState({
@@ -44,13 +47,20 @@ function ContactUs() {
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!emailRegex.test(formData.email)) {
       newErrors.email = "Enter a valid email address";
     }
+
     const phoneRegex = /^[6-9]\d{9}$/;
-    if (!phoneRegex.test(formData.phone)) {
+
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Number is required";
+    } else if (!phoneRegex.test(formData.phone)) {
       newErrors.phone = "Enter a valid 10-digit mobile number";
     }
+
     if (!formData.message.trim()) newErrors.message = "Message is required";
     return newErrors;
   };
@@ -61,6 +71,9 @@ function ContactUs() {
     setErrors(formErrors);
     if (Object.keys(formErrors).length === 0) {
       console.log("Form Submitted", formData);
+toast.success("Successfully submitted!");
+setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+
       // Reset form or send data to API here
     }
   };
@@ -69,14 +82,17 @@ function ContactUs() {
     <>
       {/* Contact with us  & Book an Apponment */}
       <div className="md:w-10/12 mx-auto">
-        <div className="flex flex-col lg:flex-row px-4 py-10 gap-10">
+        <div className="flex flex-col xl:flex-row px-4 py-10 gap-10">
           {/* Left Side - Contact Form */}
-          <div className="w-full lg:w-6/12 rounded-md  px-5 py-3" style={{ boxShadow: '0 0 10px rgba(0,0,0,0.15)' }}>
+          <div
+            className="w-full xl:w-6/12 rounded-md  px-5 py-3"
+            style={{ boxShadow: "0 0 10px rgba(0,0,0,0.15)" }}
+          >
             <h2 className="text-2xl md:text-4xl font-semibold mb-6 text-rose-700">
               Contact with us
             </h2>
-            <form onSubmit={handleSubmit} noValidate className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit} noValidate className="space-y-2">
+              <div className="grid grid-cols-1 xl:grid-cols-2 gap-2">
                 <div>
                   <input
                     type="text"
@@ -86,13 +102,15 @@ function ContactUs() {
                     onChange={handleChange}
                     maxLength={30}
                     minLength={3}
-                    className="bg-gray-100 p-3 rounded-md outline-0 w-full"
+                    className="bg-gray-100 p-3 rounded-md outline-0 w-full text-[12px]"
                   />
-                  {errors.firstName && (
-                    <p className="text-red-500 text-xs text-right mt-1">
-                      {errors.firstName}
-                    </p>
-                  )}
+                  <div className="min-h-[18px] mt-1">
+                    {errors.firstName && (
+                      <p className="text-red-500 text-xs text-right">
+                        {errors.firstName}
+                      </p>
+                    )}
+                  </div>
                 </div>
 
                 <div>
@@ -103,13 +121,16 @@ function ContactUs() {
                     value={formData.lastName}
                     onChange={handleChange}
                     maxLength={30}
-                    className="bg-gray-100 p-3 rounded-md outline-0 w-full"
+                    className="bg-gray-100 p-3 rounded-md outline-0 w-full text-[12px]"
                   />
-                  {errors.lastName && (
-                    <p className="text-red-500 text-xs text-right mt-1">
-                      {errors.lastName}
-                    </p>
-                  )}
+
+                  <div className="min-h-[18px] mt-1">
+                    {errors.lastName && (
+                      <p className="text-red-500 text-xs text-right">
+                        {errors.lastName}
+                      </p>
+                    )}
+                  </div>
                 </div>
 
                 <div>
@@ -119,13 +140,16 @@ function ContactUs() {
                     placeholder="Enter Your Email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="bg-gray-100 p-3 rounded-md outline-0 w-full"
+                    className="bg-gray-100 p-3 rounded-md outline-0 w-full text-[12px]"
                   />
-                  {errors.email && (
-                    <p className="text-red-500 text-xs text-right mt-1">
-                      {errors.email}
-                    </p>
-                  )}
+
+                  <div className="min-h-[18px] mt-1">
+                    {errors.email && (
+                      <p className="text-red-500 text-xs text-right">
+                        {errors.email}
+                      </p>
+                    )}
+                  </div>
                 </div>
 
                 <div>
@@ -136,13 +160,16 @@ function ContactUs() {
                     value={formData.phone}
                     onChange={handleChange}
                     maxLength={10}
-                    className="bg-gray-100 p-3 rounded-md outline-0 w-full"
+                    className="bg-gray-100 p-3 rounded-md outline-0 w-full text-[12px]"
                   />
-                  {errors.phone && (
-                    <p className="text-red-500 text-xs text-right mt-1">
-                      {errors.phone}
-                    </p>
-                  )}
+
+                  <div className="min-h-[18px] mt-1">
+                    {errors.phone && (
+                      <p className="text-red-500 text-xs text-right">
+                        {errors.phone}
+                      </p>
+                    )}
+                  </div>
                 </div>
               </div>
 
@@ -153,13 +180,16 @@ function ContactUs() {
                   placeholder="Enter Your Message"
                   value={formData.message}
                   onChange={handleChange}
-                  className="bg-gray-100 p-3 rounded-md outline-0 w-full"
+                  className="bg-gray-100 p-3 rounded-md outline-0 w-full text-[12px]"
                 />
-                {errors.message && (
-                  <p className="text-red-500 text-xs text-right">
-                    {errors.message}
-                  </p>
-                )}
+
+                <div className="min-h-[18px] mt-1">
+                  {errors.message && (
+                    <p className="text-red-500 text-xs text-right">
+                      {errors.message}
+                    </p>
+                  )}
+                </div>
               </div>
 
               <div className="py-5">
@@ -173,12 +203,15 @@ function ContactUs() {
             </form>
           </div>
 
-          <div className="w-full lg:w-6/12 shadow-lg rounded-md px-4 flex flex-col justify-start items-start py-3" style={{ boxShadow: '0 0 10px rgba(0,0,0,0.15)' }}>
+          <div
+            className="w-full xl:w-6/12 shadow-lg rounded-md px-4 flex flex-col justify-start items-start py-3"
+            style={{ boxShadow: "0 0 10px rgba(0,0,0,0.15)" }}
+          >
             <p className="text-2xl md:text-4xl text-rose-700 font-semibold mb-6 text-left px-1">
               Contact Information
             </p>
 
-            <div className="lg:w-full grid grid-cols-1 sm:grid-cols-2 px-5 md:px-2 gap-8 md:gap-7 py-3 md:py-10">
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 md:gap-x-10 md:gap-y-8 px-3 md:px-2 py-3 md:py-8">
               {/* Email */}
               <div className="flex gap-4 items-start">
                 <div className="bg-[#FBB8CF] p-2 rounded">
@@ -186,8 +219,10 @@ function ContactUs() {
                   <MdOutlineMail size={30} className="text-[#BE3263]" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-cyan-800 text-lg">Email</h4>
-                  <p className="text-[15px] text-gray-700">
+                  <h4 className="font-semibold text-cyan-800 text-sm md:text-lg">
+                    Email
+                  </h4>
+                  <p className="text-[12px] md:text-[15px] xl:text-[12px]  text-gray-700">
                     sriramakrishnahr@gmail.com
                   </p>
                 </div>
@@ -199,10 +234,12 @@ function ContactUs() {
                   <MdOutlineCall size={30} className="text-[#BE3263]" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-cyan-800 text-lg">
+                  <h4 className="font-semibold text-cyan-800 text-sm md:text-lg">
                     Ambulance
                   </h4>
-                  <p className="text-[15px] text-gray-700">908 | 700 | 6068</p>
+                  <p className="text-[12px] md:text-[15px] xl:text-[12px] text-gray-700">
+                    908 | 700 | 6068
+                  </p>
                 </div>
               </div>
 
@@ -212,10 +249,10 @@ function ContactUs() {
                   <MdOutlineLocationOn size={30} className="text-[#BE3263]" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-cyan-800 text-lg">
+                  <h4 className="font-semibold text-cyan-800 text-sm md:text-lg">
                     Address
                   </h4>
-                  <p className="text-[15px] text-gray-700">
+                  <p className="text-[12px] md:text-[15px] xl:text-[12px] text-gray-700">
                     Address B 20, 2nd Cross Rd, Thillai Nagar(West),
                     Trichy-620018
                   </p>
@@ -228,51 +265,70 @@ function ContactUs() {
                   <MdOutlineCall size={30} className="text-[#BE3263]" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-cyan-800 text-lg">
+                  <h4 className="font-semibold text-cyan-800 text-sm md:text-lg">
                     AS Book Appointment
                   </h4>
-                  <p className="text-[15px] text-gray-700">904 | 704 | 1111</p>
+                  <p className="text-[12px] md:text-[15px] xl:text-[12px] text-gray-700">
+                    904 | 704 | 1111
+                  </p>
                 </div>
               </div>
             </div>
 
-<div className="w-full flex flex-col items-center text-center">
-  
-  <p className="text-xl font-semibold text-cyan-800 py-3 md:py-0 mb-4">
-    Follow us
-  </p>
-  
-  <div className="flex justify-center items-center gap-5 mb-3">
-    <div className="p-3 bg-[#FBB8CF] rounded-xl cursor-pointer">
-      <a
-    href="https://www.facebook.com/people/Dr-Vijay-Anand/61554146246375/?rdid=wXmFs0MOABN6gyUX&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BvvyyFdde%2F"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-      <FaFacebookF size={20} className="text-[#BE3263]" /></a>
-    </div>
-    <div className="p-3 bg-[#FBB8CF] rounded-xl cursor-pointer">
-      <a
-    href="https://www.instagram.com/drvijayanand_/?utm_source=qr&igsh=MXBjZmI1MzYyNno0MA%3D%3D#"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-      <FaInstagram size={20} className="text-[#BE3263]" /></a>
-    </div>
-    <div className="p-3 bg-[#FBB8CF] rounded-xl cursor-pointer">
-      <a
-    href="https://www.youtube.com/@drvijayanand_?si=5Rx3zhxJz2NUPMJC"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-      <FaYoutube size={20} className="text-[#BE3263]" /></a>
-    </div>
-  </div>
-</div>
+            <div className="w-full flex flex-col items-center text-center">
+              <p className="text-xl font-semibold text-cyan-800 py-3 md:py-0 mb-4">
+                Follow us
+              </p>
 
+              <div className="flex justify-center items-center gap-5 mb-3">
+                <div className="p-3 bg-[#FBB8CF] rounded-xl">
+                  <a
+                    href="https://www.facebook.com/people/Dr-Vijay-Anand/61554146246375/?rdid=wXmFs0MOABN6gyUX&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BvvyyFdde%2F"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cursor-pointer"
+                  >
+                    <FaFacebookF size={20} className="text-[#BE3263]" />
+                  </a>
+                </div>
+                <div className="p-3 bg-[#FBB8CF] rounded-xl">
+                  <a
+                    href="https://www.instagram.com/s_r_s_hospital?igsh=N3d6YTJnZzQ1ajgx"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cursor-pointer"
+                  >
+                    <FaSquareInstagram size={20} className="text-[#BE3263]" />
+                  </a>
+                </div>
+                <div className="p-3 bg-[#FBB8CF] rounded-xl">
+                  <a
+                    href="https://youtube.com/@srshtrichy?si=VySV-bK4zw7CLeXY"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cursor-pointer"
+                  >
+                    <FaYoutube size={20} className="text-[#BE3263]" />
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      <ToastContainer
+  position="top-right"
+  autoClose={3000}
+  hideProgressBar={false}
+  newestOnTop={false}
+  closeOnClick
+  rtl={false}
+  pauseOnFocusLoss
+  draggable
+  pauseOnHover
+  theme="colored"
+/>
     </>
   );
 }

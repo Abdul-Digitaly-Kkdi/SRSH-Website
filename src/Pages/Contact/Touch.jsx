@@ -5,7 +5,6 @@ import main_image1 from "../../assets/contact-bg.jpg";
 function Touch() {
   return (
     <>
-
     <div className="relative w-full h-[15vh] md:h-[40vh]">
             <img
               src={main_image1}
@@ -18,8 +17,6 @@ function Touch() {
               </h1>
             </div>
           </div>
-
-      
       </>
     
   )

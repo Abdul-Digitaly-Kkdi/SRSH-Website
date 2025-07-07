@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import appoinment from "../../assets/appoinment.webp";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Appoinment() {
   const [formData, setFormData] = useState({
@@ -38,10 +40,17 @@ function Appoinment() {
       newErrors.name = "Name cannot exceed 30 characters";
     }
 
-    if (!emailRegex.test(formData.email))
-      newErrors.email = "Enter a valid email";
-    if (!phoneRegex.test(formData.phone))
-      newErrors.phone = "Enter a valid 10-digit number";
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!emailRegex.test(formData.email)) {
+      newErrors.email = "Enter a valid email address";
+    }
+
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Number is required";
+    } else if (!phoneRegex.test(formData.phone)) {
+      newErrors.phone = "Enter a valid 10-digit mobile number";
+    }
 
     if (!formData.date) newErrors.date = "Select a date";
     if (!formData.time) newErrors.time = "Select a time";
@@ -56,14 +65,20 @@ function Appoinment() {
 
     if (Object.keys(formErrors).length === 0) {
       console.log("Form Submitted", formData);
-      // Submit to API or reset
+      toast.success("Successfully submitted!");
+      setFormData({ department: "",
+    name: "",
+    email: "",
+    phone: "",
+    date: "",
+    time: "" });
     }
   };
 
   return (
     <>
       {/* Contact with us  & Book an Apponment */}
-      <div className="md:w-10/12 mx-auto">
+      <div className="w-full mx-auto">
         <div className="flex flex-col px-4 py-10 gap-10">
           {/* Background Image Section */}
           <div
@@ -74,18 +89,18 @@ function Appoinment() {
           </div>
 
           {/* Overlapping Form */}
-          <div className="w-full lg:w-6/12 shadow-lg px-5 mx-auto bg-white -mt-28 z-10 relative rounded-lg">
+          <div className="w-full lg:w-8/12 xl:w-7/12 shadow-lg px-5 mx-auto bg-white -mt-28 z-10 relative rounded-lg">
             <h2 className="text-2xl md:text-4xl text-rose-700 font-semibold mb-6 py-3">
               Book Your Appointment
             </h2>
-            <form onSubmit={handleSubmit} noValidate className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <form onSubmit={handleSubmit} noValidate className="space-y-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div>
                   <select
                     name="department"
                     value={formData.department}
                     onChange={handleChange}
-                    className="bg-gray-100 p-3 rounded-md w-full outline-0 cursor-pointer"
+                    className="bg-gray-100 p-3 rounded-md w-full outline-0 cursor-pointer text-[12px]"
                   >
                     <option>Select</option>
                     <option>Urology</option>
@@ -98,11 +113,13 @@ function Appoinment() {
                     <option>Surgical Gastroenterology</option>
                     <option>Medical Gastroenterology</option>
                   </select>
-                  {errors.department && (
-                    <p className="text-red-500 text-xs text-right mt-1">
-                      {errors.department}
-                    </p>
-                  )}
+                  <div className="min-h-[18px] mt-1">
+                    {errors.department && (
+                      <p className="text-red-500 text-xs text-right">
+                        {errors.department}
+                      </p>
+                    )}
+                  </div>
                 </div>
 
                 <div>
@@ -114,13 +131,16 @@ function Appoinment() {
                     onChange={handleChange}
                     maxLength={60}
                     minLength={3}
-                    className="bg-gray-100 p-3 rounded-md outline-0 w-full"
+                    className="bg-gray-100 p-3 rounded-md outline-0 w-full text-[12px]"
                   />
-                  {errors.name && (
-                    <p className="text-red-500 text-xs text-right mt-1">
-                      {errors.name}
-                    </p>
-                  )}
+
+                  <div className="min-h-[18px] mt-1">
+                    {errors.name && (
+                      <p className="text-red-500 text-xs text-right">
+                        {errors.name}
+                      </p>
+                    )}
+                  </div>
                 </div>
 
                 <div>
@@ -130,13 +150,16 @@ function Appoinment() {
                     placeholder="Email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="bg-gray-100 p-3 rounded-md outline-0 w-full"
+                    className="bg-gray-100 p-3 rounded-md outline-0 w-full text-[12px]"
                   />
-                  {errors.email && (
-                    <p className="text-red-500 text-xs text-right mt-1">
-                      {errors.email}
-                    </p>
-                  )}
+
+                  <div className="min-h-[18px] mt-1">
+                    {errors.email && (
+                      <p className="text-red-500 text-xs text-right">
+                        {errors.email}
+                      </p>
+                    )}
+                  </div>
                 </div>
 
                 <div>
@@ -147,13 +170,16 @@ function Appoinment() {
                     value={formData.phone}
                     onChange={handleChange}
                     maxLength={10}
-                    className="bg-gray-100 p-3 rounded-md outline-0 w-full"
+                    className="bg-gray-100 p-3 rounded-md outline-0 w-full text-[12px]"
                   />
-                  {errors.phone && (
-                    <p className="text-red-500 text-xs text-right mt-1">
-                      {errors.phone}
-                    </p>
-                  )}
+
+                  <div className="min-h-[18px] mt-1">
+                    {errors.phone && (
+                      <p className="text-red-500 text-xs text-right">
+                        {errors.phone}
+                      </p>
+                    )}
+                  </div>
                 </div>
 
                 <div>
@@ -162,13 +188,16 @@ function Appoinment() {
                     name="date"
                     value={formData.date}
                     onChange={handleChange}
-                    className="bg-gray-100 p-3 rounded-md outline-0 w-full"
+                    className="bg-gray-100 p-3 rounded-md outline-0 w-full text-[12px]"
                   />
-                  {errors.date && (
-                    <p className="text-red-500 text-xs text-right mt-1">
-                      {errors.date}
-                    </p>
-                  )}
+
+                  <div className="min-h-[18px] mt-1">
+                    {errors.date && (
+                      <p className="text-red-500 text-xs text-right">
+                        {errors.date}
+                      </p>
+                    )}
+                  </div>
                 </div>
 
                 <div>
@@ -177,13 +206,16 @@ function Appoinment() {
                     name="time"
                     value={formData.time}
                     onChange={handleChange}
-                    className="bg-gray-100 p-3 rounded-md outline-0 w-full"
+                    className="bg-gray-100 p-3 rounded-md outline-0 w-full text-[12px]"
                   />
-                  {errors.time && (
-                    <p className="text-red-500 text-xs text-right mt-1">
-                      {errors.time}
-                    </p>
-                  )}
+
+                  <div className="min-h-[18px] mt-1">
+                    {errors.time && (
+                      <p className="text-red-500 text-xs text-right">
+                        {errors.time}
+                      </p>
+                    )}
+                  </div>
                 </div>
               </div>
 
@@ -199,6 +231,19 @@ function Appoinment() {
           </div>
         </div>
       </div>
+
+      <ToastContainer
+  position="top-right"
+  autoClose={3000}
+  hideProgressBar={false}
+  newestOnTop={false}
+  closeOnClick
+  rtl={false}
+  pauseOnFocusLoss
+  draggable
+  pauseOnHover
+  theme="colored"
+/>
     </>
   );
 }
