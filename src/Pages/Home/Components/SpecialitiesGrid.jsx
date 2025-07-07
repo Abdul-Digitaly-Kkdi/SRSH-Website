@@ -37,7 +37,7 @@ const SpecialitiesGrid = () => {
                     <div
                         key={index}
                         onClick={() => navigate(item.path)}
-                        className="group cursor-pointer relative border border-blue-500 rounded-md overflow-hidden flex flex-col items-center justify-center text-center transition-all duration-500 py-10 px-4 basis-1/2 sm:basis-1/3 lg:basis-1/6"
+                        className="group cursor-pointer relative border border-blue-500 rounded-md overflow-hidden flex flex-col items-center justify-center text-center transition-all duration-500 py-6 px-4 basis-1/3 sm:basis-1/2 lg:basis-1/6"
                     >
                         {/* Hover BG Animation */}
                         <div className="absolute inset-0 bg-rose-100 transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out z-0" />

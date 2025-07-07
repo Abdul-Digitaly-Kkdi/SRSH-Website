@@ -38,7 +38,7 @@ const Doctors = () => {
       <div className="flex justify-center py-12 bg-violet-100 w-full">
         <div className="w-full px-6 md:px-0 md:w-8/12 flex flex-col gap-6">
           <h1 className="text-3xl text-cyan-800 font-semibold">
-            About Treatment
+            We Care...
           </h1>
           <p className="text-lg">
             We carefully manage the treatment of patients At our facility, we

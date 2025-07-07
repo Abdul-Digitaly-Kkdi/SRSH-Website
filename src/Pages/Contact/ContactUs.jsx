@@ -312,7 +312,7 @@ function ContactUs() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-cyan-800 text-sm md:text-lg">
-                    AS Book Appointment
+                    Book Appointment
                   </h4>
                   <p className="text-[12px] md:text-[15px] xl:text-[12px] text-gray-700">
                     904 | 704 | 1111
