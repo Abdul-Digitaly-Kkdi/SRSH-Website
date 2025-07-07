@@ -16,7 +16,7 @@ const counters = [
 const SurgeryStats = () => {
     return (
         <div className="bg-rose-400 text-white py-5">
-            <div className="w-full md:w-8/12 mx-auto">
+            <div className="w-full md:w-10/12 mx-auto">
                 <Marquee>
                     {counters.map((data, id) => (
                         <div key={id} className='px-5 text-center'>
@@ -29,7 +29,6 @@ const SurgeryStats = () => {
                         </div>
                     ))}
                 </Marquee>
-
             </div>
         </div>
     );

@@ -1,10 +1,48 @@
 import maindoctor from "../../../assets/images/ourdoctors/maindoctor.webp";
-import phone from "../../../assets/icons/phone.png";
-import location from "../../../assets/icons/location.png";
-import mail from "../../../assets/icons/mail.png";
-import instagram from "../../../assets/icons/instagram.png";
-import facebook from "../../../assets/icons/facebook.png";
-import youtube from "../../../assets/icons/youtube.png";
+import phoneIcon from "../../../assets/icons/phone.png";
+import locationIcon from "../../../assets/icons/location.png";
+import mailIcon from "../../../assets/icons/mail.png";
+import instagramIcon from "../../../assets/icons/instagram.png";
+import facebookIcon from "../../../assets/icons/facebook.png";
+import youtubeIcon from "../../../assets/icons/youtube.png";
+
+// Contact Information
+const contactDetails = [
+  {
+    icon: phoneIcon,
+    alt: "Phone",
+    content: "+91 9047146123",
+  },
+  {
+    icon: locationIcon,
+    alt: "Location",
+    content: `B 20, 2nd Cross Rd, Thillai Nagar (West),\nTrichy - 620018`,
+  },
+  {
+    icon: mailIcon,
+    alt: "Email",
+    content: "sriramakrishnahr@gmail.com",
+  },
+];
+
+// Social Media Links
+const socialLinks = [
+  {
+    icon: instagramIcon,
+    alt: "Instagram",
+    url: "https://www.instagram.com/s_r_s_hospital/",
+  },
+  {
+    icon: facebookIcon,
+    alt: "Facebook",
+    url: "https://www.facebook.com/profile.php?id=61554146246375",
+  },
+  {
+    icon: youtubeIcon,
+    alt: "YouTube",
+    url: "https://www.youtube.com/@SRSHTrichy",
+  },
+];
 
 const Maindoctor = () => {
   return (
@@ -19,66 +57,56 @@ const Maindoctor = () => {
           />
         </div>
 
-        {/* Info */}
+        {/* Info Section */}
         <div className="w-full md:w-1/2 flex flex-col gap-6">
+          {/* Title */}
           <div className="flex flex-col gap-3">
             <p className="text-lg sm:text-xl font-semibold">
               Sri Ramakrishna Specialty Hospital
             </p>
             <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-800">
-              DR.M.S.VIJAYANAND
+              Dr. M. S. VIJAYANAND
             </h1>
             <p className="text-sm sm:text-base md:text-lg mt-2 leading-relaxed text-gray-700">
               MBBS, MS (General Surgery), MCh (Surgical Gastroenterology/GI
-              Surgery) Memberships, F.M.A.S. (Fellowship in Minimal Access
-              Surgery), F.A.L.S. (Fellowship in Advanced Laparoscopic Surgery),
-              trained in IVIS (Seoul)
+              Surgery), F.M.A.S., F.A.L.S., trained in IVIS (Seoul)
             </p>
           </div>
 
           {/* Contact Info */}
           <div className="flex flex-col gap-4 mt-4">
-            {["+91 9047146123", "+91 9087006067", "+91 9047041111"].map(
-              (number, idx) => (
-                <div
-                  key={idx}
-                  className="flex items-center gap-3 text-sm sm:text-base md:text-lg"
-                >
-                  <img
-                    src={phone}
-                    alt="Phone"
-                    className="h-6 w-6 sm:h-7 sm:w-7 object-contain"
-                  />
-                  <span>{number}</span>
-                </div>
-              )
-            )}
-
-            <div className="flex items-start gap-3">
-              <img
-                src={location}
-                alt="Location"
-                className="h-7 w-7 object-contain mt-1"
-              />
-              <p className="text-sm sm:text-base md:text-lg whitespace-pre-line">
-                B 20, 2nd Cross Rd, Thillai Nagar (West),
-                {"\n"}Trichy - 620018
-              </p>
-            </div>
-
-            <div className="flex items-start gap-3">
-              <img src={mail} alt="mail" className="h-6 w-6 object-contain" />
-              <p className="text-sm sm:text-base md:text-lg">
-                sriramakrishnahr@gmail.com
-              </p>
-            </div>
+            {contactDetails.map((item, index) => (
+              <div key={index} className="flex items-start gap-3">
+                <img
+                  src={item.icon}
+                  alt={item.alt}
+                  className={`h-6 w-6 sm:h-7 sm:w-7 object-contain ${item.alt === "Location" ? "mt-1" : ""
+                    }`}
+                />
+                <p className="text-sm sm:text-base md:text-lg whitespace-pre-line">
+                  {item.content}
+                </p>
+              </div>
+            ))}
 
             {/* Social Media */}
             <div className="flex md:justify-start justify-center pt-2">
               <div className="flex gap-5 items-center">
-                <img src={instagram} className="h-8 w-8 sm:h-9 sm:w-9" />
-                <img src={facebook} className="h-8 w-8 sm:h-9 sm:w-9" />
-                <img src={youtube} className="h-8 w-8 sm:h-9 sm:w-9" />
+                {socialLinks.map((link, index) => (
+                  <a
+                    key={index}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={link.alt}
+                  >
+                    <img
+                      src={link.icon}
+                      alt={link.alt}
+                      className="h-8 w-8 sm:h-9 sm:w-9 hover:opacity-80 transition"
+                    />
+                  </a>
+                ))}
               </div>
             </div>
           </div>

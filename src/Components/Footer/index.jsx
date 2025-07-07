@@ -6,27 +6,22 @@ import {
   Mail,
   MapPin,
   Phone,
+  Youtube,
 } from "lucide-react";
 import Logo from "../../assets/logo.png"; // Adjust path if needed
 import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   const specialities = [
-    {
-      name: "Medical Gastroenterology",
-      path: "/specialities/Medical-Gastroenterology",
-    },
-    { name: "Clinical Oncology", path: "/specialities/Clinical-Oncology" },
-    { name: "General Surgery", path: "/specialities/General-Surgery" },
-    { name: "Critical Care", path: "/specialities/Critical-Care" },
-    { name: "General Medicine", path: "/specialities/General-Medicine" },
-    {
-      name: "Surgical Gastroenterology",
-      path: "/specialities/Surgical-Gastroenterology",
-    },
-    { name: "GI & HPB Oncology", path: "/specialities/GI&HPB-Oncology" },
-    { name: "Urology", path: "/specialities/urology" },
-    { name: "Orthopedics", path: "/specialities/Orthopedics" },
+    { name: 'GI & HBP Oncology', path: '/specialities/GI-&-HBP-Oncology' },
+    { name: 'Surgical and Medical Oncology', path: '/specialities/Surgical-and-Medical-Oncology' },
+    { name: 'Surgerical Gastroenterology', path: '/specialities/Surgerical-Gastroenterology' },
+    { name: 'Medical Gastroenterology', path: '/specialities/Medical-Gastroenterology' },
+    { name: 'General surgery', path: '/specialities/General-surgery' },
+    { name: 'Orthopedics', path: '/specialities/Orthopedics' },
+    { name: 'Urology', path: '/specialities/Urology' },
+    { name: 'General Medicine', path: '/specialities/General-Medicine' },
+    { name: 'Critical Care', path: '/specialities/Critical-Care' },
   ];
 
   const pages = [
@@ -84,7 +79,9 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-3">Contact Us</h3>
           <ul className="space-y-2 text-sm">
             <li className="flex items-start gap-2">
-              <MapPin className="w-4 h-4 mt-1" />
+              <div>
+                <MapPin className="w-4 h-4 mt-1" />
+              </div>
               <span>
                 B20, 2nd Cross Rd, West Thillai Nagar, Tiruchirappalli, Tamil
                 Nadu 620018
@@ -101,14 +98,14 @@ const Footer = () => {
           </ul>
 
           <div className="flex gap-4 mt-4">
-            <a href="#" className="hover:text-blue-600">
+            <a href="https://www.facebook.com/profile.php?id=61554146246375" className="hover:text-blue-600">
               <Facebook size={20} />
             </a>
-            <a href="#" className="hover:text-pink-600">
+            <a href="https://www.instagram.com/s_r_s_hospital/" className="hover:text-pink-600">
               <Instagram size={20} />
             </a>
-            <a href="#" className="hover:text-blue-400">
-              <Twitter size={20} />
+            <a href="https://www.youtube.com/@SRSHTrichy" className="hover:text-blue-400">
+              <Youtube size={20} />
             </a>
           </div>
         </div>

@@ -1,52 +1,40 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 const videos = [
     { id: '1EIdX2ndS87J-993J8e2S_MnuvsCOa6GT', name: 'Customer 1' },
     { id: '1ELDpNd9_g2g1pMmGYq1TtYTeEIYkZqz9', name: 'Customer 2' },
     { id: '1T9NbIxNXjZeX6emu7dD3spE5qw3isQUG', name: 'Customer 3' },
+    { id: '1Kd6R5xZi2dslE-TTgHJE2YBRATCVc1eU', name: 'Customer 4' },
+    { id: '1ET9DbMoX6nsrWrfMLroxCDYy8kqP5w1A', name: 'Customer 5' },
+    { id: '1zj5ye7mvYklW-59ATGY6cZ3JQY0VL3Ar', name: 'Customer 6' },
 ];
 
-export default function TestimonialPage() {
+export default function Testimonial() {
     const [openId, setOpenId] = useState(null);
-    const navigate = useNavigate();
 
     return (
-        <div className=" bg-gray-50 py-10 px-4 mt-5">
-            {/* Header */}
-            <h1 className="text-3xl md:text-4xl font-semibold text-rose-700 text-center mb-3">
+        <div className="min-h-screen bg-gray-50 py-10 px-4 " >
+            <h1 className="text-3xl md:text-4xl font-semibold text-rose-700 text-center mb-5">
                 Testimonials
             </h1>
-            <p className="text-rose-400 text-center mb-6">
+            <h1 className="text-rose-400 text-center mb-4">
                 Our Cases & Patient Stories
-            </p>
-
-            {/* One Row of Videos */}
-            <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
-                {videos.slice(0, 3).map((video) => (
+            </h1>
+            <div className="grid grid-cols-1.5 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                {videos.map((video) => (
                     <div
                         key={video.id}
-                        className="w-full sm:w-[48%] md:w-[31%] bg-white shadow-md hover:shadow-xl transition duration-300 cursor-pointer"
+                        className="bg-white shadow-md overflow-hidden hover:shadow-xl transition duration-300"
                         onClick={() => setOpenId(video.id)}
                     >
                         <iframe
                             src={`https://drive.google.com/file/d/${video.id}/preview`}
                             title={video.name}
-                            className="w-full h-100 object-cover"
+                            className="w-full h-100 md:h-90 object-cover cursor-pointer"
                             allow="autoplay"
                         ></iframe>
                     </div>
                 ))}
-            </div>
-
-            {/* View All Button */}
-            <div className="text-center mt-8">
-                <button
-                    onClick={() => navigate('/testimonials')}
-                    className="bg-rose-500 text-white px-6 py-2 rounded  hover:scale-105 transition cursor-pointer h"
-                >
-                    View All Testimonials
-                </button>
             </div>
 
             {/* Lightbox Modal */}

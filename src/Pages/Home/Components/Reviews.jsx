@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { SiTicktick } from 'react-icons/si';
 
 const Reviews = [
     {
@@ -12,13 +13,13 @@ const Reviews = [
         avatar: 'https://pagedone.io/asset/uploads/1696229969.png'
     },
     {
-        rating: 4.9,
+        rating: 4.6,
         text: 'Very polite and excellent patient care. My friend underwent pancreatic cancer surgery here. Dr.Vijayanand one of the leading gastrosurgeons in trichy. Properly explained about the procedure and took great care. Thanks to Sri Ramakrishna specialty hospital.',
         name: 'Curious Scalpel',
         avatar: 'https://pagedone.io/asset/uploads/1696229994.png'
     },
     {
-        rating: 4.9,
+        rating: 4.5,
         text: 'One of the best doctor, he treated my mother with patience and as everyones here mentioned he is not keen on money and he will never suggest any tests until it’s really necessary to proceed with treatment.',
         name: 'Vani Kathir',
         avatar: 'https://pagedone.io/asset/uploads/1696230027.png'
@@ -30,13 +31,13 @@ const Reviews = [
         avatar: 'https://pagedone.io/asset/uploads/1696230027.png'
     },
     {
-        rating: 4.9,
+        rating: 4.8,
         text: 'Doctors are so humble .Excellent service of doctors and staffs.Hospital was well organised and everyone working in the hospital treats patients with respect and dignity. Overall experience was very good.',
         name: 'Rathika Srm',
         avatar: 'https://pagedone.io/asset/uploads/1696230027.png'
     },
     {
-        rating: 4.9,
+        rating: 4.5,
         text: 'One of the best doctor in trichy I was consult Dr. Vijay anand for my wife he explained each everything thank you so much. Well maintanace hospital',
         name: 'Vijay kumar',
         avatar: 'https://pagedone.io/asset/uploads/1696230027.png'
@@ -102,7 +103,8 @@ const Review = () => {
                                     </div>
 
                                     <div className="mt-6 flex items-center gap-5 border-t border-gray-200 pt-5">
-                                        <img className="rounded-full h-10 w-10 object-cover" src={item.avatar} alt="avatar" />
+                                        {/* <img className="rounded-full h-10 w-10 object-cover" src={item.avatar} alt="avatar" /> */}
+                                        <SiTicktick />
                                         <div>
                                             <h5 className="text-gray-900 font-medium mb-1">{item.name}</h5>
                                             <span className="text-sm leading-4 text-gray-500">{item.role}</span>

@@ -19,15 +19,16 @@ const Header = () => {
             name: 'Specialities',
             path: '/specialities',
             subMenu: [
+
+                { name: 'GI & HBP Oncology', path: '/specialities/GI-&-HBP-Oncology' },
+                { name: 'Surgical and Medical Oncology', path: '/specialities/Surgical-and-Medical-Oncology' },
+                { name: 'Surgerical Gastroenterology', path: '/specialities/Surgerical-Gastroenterology' },
                 { name: 'Medical Gastroenterology', path: '/specialities/Medical-Gastroenterology' },
-                { name: 'Clinical Oncology', path: '/specialities/Clinical-Oncology' },
-                { name: 'General Surgery', path: '/specialities/General-Surgery' },
-                { name: 'Critical Care', path: '/specialities/Critical-Care' },
-                { name: 'General Medicine', path: '/specialities/General-Medicine' },
-                { name: 'Surgical Gastroenterology', path: '/specialities/Surgical-Gastroenterology' },
-                { name: 'GI & HPB Oncology', path: '/specialities/GI&HPB-Oncology' },
-                { name: 'Urology', path: '/specialities/urology' },
+                { name: 'General surgery', path: '/specialities/General-surgery' },
                 { name: 'Orthopedics', path: '/specialities/Orthopedics' },
+                { name: 'Urology', path: '/specialities/Urology' },
+                { name: 'General Medicine', path: '/specialities/General-Medicine' },
+                { name: 'Critical Care', path: '/specialities/Critical-Care' },
             ],
         },
         { name: 'Gallery', path: '/gallery' },
@@ -66,8 +67,8 @@ const Header = () => {
                 <div className="flex flex-col cursor-pointer" onClick={() => (
                     nav('/')
                 )}>
-                    <img src={Logo} alt="Logo" className="h-14 xl:h-16 w-auto" />
-                    <p className='text-gray-800 hidden lg:flex ml-4 text-xs '>West Thillai Nagar, Tiruchirappalli</p>
+                    <img src={Logo} alt="Logo" className="h-12 lg:h-14 xl:h-16 w-auto" />
+                    <p className='text-gray-800 hidden xl:flex ml-4 text-xs '>West Thillai Nagar, Tiruchirappalli</p>
                 </div>
 
                 {/* Desktop Nav */}
@@ -81,7 +82,7 @@ const Header = () => {
                             {link.subMenu ? (
                                 <button
                                     onClick={() => setDropdownOpen(prev => !prev)}
-                                    className="flex items-center gap-1 text-white font-medium"
+                                    className="flex items-center gap-1 text-white text-sm xl:text-base font-medium"
                                 >
                                     {link.name}
                                     <ChevronDown
@@ -92,7 +93,7 @@ const Header = () => {
                             ) : (
                                 <NavLink
                                     to={link.path}
-                                    className="text-white font-medium hover:"
+                                    className="text-white font-medium text-sm xl:text-base"
                                 >
                                     {link.name}
                                 </NavLink>
@@ -119,13 +120,17 @@ const Header = () => {
 
                 {/* CTA Button */}
                 <div className="hidden lg:block">
-                    <button className="bg-[#ff4e41] px-4 py-2 rounded-2xl flex items-center gap-2 cursor-pointer">
-                        <img src={service} alt="" className='h-6 xl:h-8' />
-                        <div className='flex flex-col text-sm text-start text-white'>
-                            <span className=' font-semibold text-xs'>Emergency</span>
-                            <span className=' font-semibold '>9047146123</span>
+                    <a
+                        href="tel:+919047146123"
+                        className="bg-[#ff4e41] px-4 py-2 rounded-2xl flex items-center gap-2 cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ff4e41]"
+                        aria-label="Call Emergency Number"
+                    >
+                        <img src={service} alt="Emergency Icon" className="h-6 xl:h-8" />
+                        <div className="flex flex-col text-sm text-start text-white leading-tight">
+                            <span className="font-semibold text-xs">Emergency</span>
+                            <span className="font-semibold text-sm xl:text-base">9047146123</span>
                         </div>
-                    </button>
+                    </a>
                 </div>
 
                 {/* Mobile Toggle */}
@@ -134,54 +139,56 @@ const Header = () => {
                         {menuOpen ? <X size={28} /> : <Menu size={28} />}
                     </button>
                 </div>
-            </div>
+            </div >
 
             <div className='bg-white py-1'>
                 <Marquee>
                     {marquee.map((data) => (
-                        <p className='px-4'><span className='text-red-500 animate-bounce'>❤</span>  {data}</p>
+                        <p className='px-4 text-xs md:text-base'><span className='text-red-500 animate-bounce'>❤</span>  {data}</p>
                     ))}
                 </Marquee>
             </div>
 
             {/* Mobile Nav */}
-            {menuOpen && (
-                <div className="lg:hidden px-4 pb-4 space-y-2 bg-rose-50">
-                    {headerLinks.map((link) => (
-                        <div key={link.name}>
-                            <NavLink
-                                to={link.path}
-                                className="block py-2 text-rose-900 font-medium"
-                                onClick={() => setMenuOpen(false)}
-                            >
-                                {link.name}
-                            </NavLink>
-                            {link.subMenu && (
-                                <div className="pl-4 space-y-1">
-                                    {link.subMenu.map((sub) => (
-                                        <NavLink
-                                            to={sub.path}
-                                            key={sub.name}
-                                            className="block py-1 text-sm text-rose-700"
-                                            onClick={() => setMenuOpen(false)}
-                                        >
-                                            {sub.name}
-                                        </NavLink>
-                                    ))}
-                                </div>
-                            )}
-                        </div>
-                    ))}
-                    <button className="bg-[#ff4e41] px-4 py-2 rounded-2xl flex items-center gap-2 cursor-pointer">
-                        <img src={service} alt="" className='h-6 xl:h-8' />
-                        <div className='flex flex-col text-sm text-start text-white'>
-                            <span className=' font-bold'>Emergency</span>
-                            <span className=' font-semibold'>9047146123</span>
-                        </div>
-                    </button>
-                </div>
-            )}
-        </header>
+            {
+                menuOpen && (
+                    <div className="lg:hidden px-4 pb-4 space-y-2 bg-rose-50">
+                        {headerLinks.map((link) => (
+                            <div key={link.name}>
+                                <NavLink
+                                    to={link.path}
+                                    className="block py-2 text-rose-900 font-medium"
+                                    onClick={() => setMenuOpen(false)}
+                                >
+                                    {link.name}
+                                </NavLink>
+                                {link.subMenu && (
+                                    <div className="pl-4 space-y-1">
+                                        {link.subMenu.map((sub) => (
+                                            <NavLink
+                                                to={sub.path}
+                                                key={sub.name}
+                                                className="block py-1 text-sm text-rose-700"
+                                                onClick={() => setMenuOpen(false)}
+                                            >
+                                                {sub.name}
+                                            </NavLink>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                        <button className="bg-[#ff4e41] px-4 py-2 rounded-2xl flex items-center gap-2 cursor-pointer">
+                            <img src={service} alt="" className='h-6 xl:h-8' />
+                            <div className='flex flex-col text-sm text-start text-white'>
+                                <span className=' font-bold'>Emergency</span>
+                                <span className=' font-semibold'>9047146123</span>
+                            </div>
+                        </button>
+                    </div>
+                )
+            }
+        </header >
     );
 };
 

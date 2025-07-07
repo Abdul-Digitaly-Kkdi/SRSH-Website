@@ -108,8 +108,8 @@ function ContactUs() {
   return (
     <>
       {/* Contact with us  & Book an Apponment */}
-      <div className="md:w-10/12 mx-auto">
-        <div className="flex flex-col xl:flex-row px-4 py-10 gap-10">
+      <div className="md:w-11/12 mx-auto">
+        <div className="flex flex-col lg:flex-row px-4 py-10 gap-10">
           {/* Left Side - Contact Form */}
           <div
             className="w-full lg:w-6/12 rounded-md  px-5 py-3"
@@ -237,11 +237,10 @@ function ContactUs() {
                   type="submit"
                   disabled={loading}
                   className={`flex items-center justify-center gap-2 px-8 py-3 rounded-full mt-2 transition cursor-pointer
-      ${
-        loading
-          ? "bg-gray-300 text-gray-600 cursor-not-allowed"
-          : "bg-gradient-to-r from-red-500 to-pink-500 text-white hover:from-pink-500 hover:to-red-500 hover:text-black"
-      }
+      ${loading
+                      ? "bg-gray-300 text-gray-600 cursor-not-allowed"
+                      : "bg-gradient-to-r from-red-500 to-pink-500 text-white hover:from-pink-500 hover:to-red-500 hover:text-black"
+                    }
     `}
                 >
                   {loading ? "Submitting..." : "Submit"} <FiArrowUpRight />
@@ -258,7 +257,7 @@ function ContactUs() {
               Contact Information
             </p>
 
-            <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 md:gap-x-10 md:gap-y-8 px-3 md:px-2 py-3 md:py-8">
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 gap-x-8 gap-y-6 md:gap-x-10 md:gap-y-8 px-3 md:px-2 py-3 md:py-8">
               {/* Email */}
               <div className="flex gap-4 items-start">
                 <div className="bg-[#FBB8CF] p-2 rounded">

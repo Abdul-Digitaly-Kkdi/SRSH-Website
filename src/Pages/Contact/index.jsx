@@ -14,12 +14,7 @@ function index() {
     <Appoinment />
     <Accordion />
     <Location />
-    
-
-
-
-
-    </>
+        </>
   );
 }
 
