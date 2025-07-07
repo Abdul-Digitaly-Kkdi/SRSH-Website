@@ -6,11 +6,16 @@ import { FaYoutube } from "react-icons/fa";
 import { MdOutlineMail } from "react-icons/md";
 import { MdOutlineLocationOn } from "react-icons/md";
 import { MdOutlineCall } from "react-icons/md";
+import emailjs from "emailjs-com";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function ContactUs() {
+  const SERVICE_ID = "service_jgstobf"; // e.g., service_gmail
+  const TEMPLATE_ID = "template_rzp9o9z"; // e.g., template_contact
+  const PUBLIC_KEY = "Zr5o9Z93wf4aMsUnF"; // from dashboard
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -70,11 +75,30 @@ function ContactUs() {
     const formErrors = validate();
     setErrors(formErrors);
     if (Object.keys(formErrors).length === 0) {
+<<<<<<< HEAD
       console.log("Form Submitted", formData);
 toast.success("Successfully submitted!");
 setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
 
       // Reset form or send data to API here
+=======
+      emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, PUBLIC_KEY).then(
+        () => {
+          alert("Message sent successfully!");
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            phone: "",
+            message: "",
+          });
+        },
+        (error) => {
+          alert("Failed to send message. Please try again.");
+          console.error(error);
+        }
+      );
+>>>>>>> 98cf997b5aa6cd07d4a26ed0fa2ee2e3abb88320
     }
   };
 
@@ -85,7 +109,11 @@ setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
         <div className="flex flex-col xl:flex-row px-4 py-10 gap-10">
           {/* Left Side - Contact Form */}
           <div
+<<<<<<< HEAD
             className="w-full xl:w-6/12 rounded-md  px-5 py-3"
+=======
+            className="w-full lg:w-6/12 rounded-md  px-5 py-3"
+>>>>>>> 98cf997b5aa6cd07d4a26ed0fa2ee2e3abb88320
             style={{ boxShadow: "0 0 10px rgba(0,0,0,0.15)" }}
           >
             <h2 className="text-2xl md:text-4xl font-semibold mb-6 text-rose-700">
@@ -204,7 +232,11 @@ setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
           </div>
 
           <div
+<<<<<<< HEAD
             className="w-full xl:w-6/12 shadow-lg rounded-md px-4 flex flex-col justify-start items-start py-3"
+=======
+            className="w-full lg:w-6/12 shadow-lg rounded-md px-4 flex flex-col justify-start items-start py-3"
+>>>>>>> 98cf997b5aa6cd07d4a26ed0fa2ee2e3abb88320
             style={{ boxShadow: "0 0 10px rgba(0,0,0,0.15)" }}
           >
             <p className="text-2xl md:text-4xl text-rose-700 font-semibold mb-6 text-left px-1">
@@ -281,16 +313,24 @@ setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
               </p>
 
               <div className="flex justify-center items-center gap-5 mb-3">
+<<<<<<< HEAD
                 <div className="p-3 bg-[#FBB8CF] rounded-xl">
+=======
+                <div className="p-3 bg-[#FBB8CF] rounded-xl cursor-pointer">
+>>>>>>> 98cf997b5aa6cd07d4a26ed0fa2ee2e3abb88320
                   <a
                     href="https://www.facebook.com/people/Dr-Vijay-Anand/61554146246375/?rdid=wXmFs0MOABN6gyUX&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BvvyyFdde%2F"
                     target="_blank"
                     rel="noopener noreferrer"
+<<<<<<< HEAD
                     className="cursor-pointer"
+=======
+>>>>>>> 98cf997b5aa6cd07d4a26ed0fa2ee2e3abb88320
                   >
                     <FaFacebookF size={20} className="text-[#BE3263]" />
                   </a>
                 </div>
+<<<<<<< HEAD
                 <div className="p-3 bg-[#FBB8CF] rounded-xl">
                   <a
                     href="https://www.instagram.com/s_r_s_hospital?igsh=N3d6YTJnZzQ1ajgx"
@@ -307,6 +347,22 @@ setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
                     target="_blank"
                     rel="noopener noreferrer"
                     className="cursor-pointer"
+=======
+                <div className="p-3 bg-[#FBB8CF] rounded-xl cursor-pointer">
+                  <a
+                    href="https://www.instagram.com/drvijayanand_/?utm_source=qr&igsh=MXBjZmI1MzYyNno0MA%3D%3D#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaInstagram size={20} className="text-[#BE3263]" />
+                  </a>
+                </div>
+                <div className="p-3 bg-[#FBB8CF] rounded-xl cursor-pointer">
+                  <a
+                    href="https://www.youtube.com/@drvijayanand_?si=5Rx3zhxJz2NUPMJC"
+                    target="_blank"
+                    rel="noopener noreferrer"
+>>>>>>> 98cf997b5aa6cd07d4a26ed0fa2ee2e3abb88320
                   >
                     <FaYoutube size={20} className="text-[#BE3263]" />
                   </a>
