@@ -15,6 +15,7 @@ import ScrollToTopButton from "./Components/ScrollToTopButton";
 import StickyContactButtons from "./Components/StickyContactButtons";
 import NotFound from "./Pages/404/Index";
 import Testimonial from "./Pages/Testimonial/Index";
+import DepartmentPage from "./Pages/specialities/Department";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           {/* <Route path="/specialities/:id" element={<Speciality />} /> */}
           <Route path="/csr" element={<DeltaCancerFoundation />} />
           <Route path="/testimonials" element={<Testimonial />} />
+          <Route path="/specialities/:slug" element={<DepartmentPage />} />
           <Route path="/*" element={<NotFound />} />
         </Route>
       </Routes>
